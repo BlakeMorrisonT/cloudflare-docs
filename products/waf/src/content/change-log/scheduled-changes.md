@@ -32,28 +32,5 @@ order: 1
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>
-                2020-10-12
-            </td>
-            <td>
-                2020-10-19
-            </td>
-            <td>
-                Cloudflare Specials
-            </td>
-            <td>
-                100124
-            </td>
-            <td>
-                Improve Command Injection detection
-            </td>
-            <td>
-                Disabled
-            </td>
-            <td>
-                Disabled
-            </td>
-        </tr>
     </tbody>
 </table></TableWrap>
