@@ -32,28 +32,5 @@ order: 1
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>
-                2020-11-23
-            </td>
-            <td>
-                2020-12-02
-            </td>
-            <td>
-                Cloudflare Specials
-            </td>
-            <td>
-                100048
-            </td>
-            <td>
-                Improve body anomaly detection
-            </td>
-            <td>
-                Disable
-            </td>
-            <td>
-                Disable
-            </td>
-        </tr>
     </tbody>
 </table></TableWrap>
