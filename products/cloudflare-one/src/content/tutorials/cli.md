@@ -1,12 +1,21 @@
 ---
-order: 1
+updated: 2021-03-23
+category: 🔐 Zero Trust
 ---
 
-# CLI
+# Connect through Cloudflare Access using a CLI
 
 Cloudflare's `cloudflared` command-line tool allows you to interact with endpoints protected by Cloudflare Access. You can use `cloudflared` to interact with a protected application's API.
 
 These instructions are not meant for configuring a service to run against an API. The token in this example is tailored to user identity and intended only for an end user interacting with an API via a command-line tool.
+
+**🗺️ This walkthrough covers how to:**
+
+* Connect to resources secured by Cloudflare Access from a CLI
+
+**⏲️ Time to complete: 30 minutes**
+
+---
 
 ## Authenticate a session from the command line
 

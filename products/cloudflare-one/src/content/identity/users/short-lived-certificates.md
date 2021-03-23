@@ -127,19 +127,3 @@ Host cfpipe-vm.example.com
     IdentityFile ~/.cloudflared/vm.example.com-cf_key
     CertificateFile ~/.cloudflared/vm.example.com-cf_key-cert.pub
  ```
-
-# Advantages of short-lived certificates over legacy public key models
-
-* **Organizational control of keys to infrastructure**.
-Instead of user-generated certificates securing core resources, Access issues short-lived certificates based on a login with your SSO identity provider.
-
-* **Limited certificate lifespans of minutes, not years**. In most organizations, a user generates a public key that remains unchanged for years.
-
-* **Lower risk levels in the event of device loss or compromise**.
-A stolen device can still contain SSH keys that permit infrastructure access. Unless the infrastructure is protected by a password, a malicious user can exploit that vulnerability before an organization has time to revoke both the user identity login and the user-generated SSH key.
-
-* **Consolidated access control and offboarding or revocation**.
-Cloudflare Access controls who can reach sensitive resources using your SSO identity provider. When users authenticate with your identity provider, Access generates a JWT scoped to the user and the application.
-
-* **Comprehensive audit logs**.
-Regardless of your infrastructure, whether on-premises, hybrid, or public cloud, administrators can control who can reach what environments in a single place. Audit logs are collected by  Cloudflare Access and standardized across any protected resources. These logs let administrators know who accessed what and when.
