@@ -35,88 +35,10 @@ order: 1
     <tbody>
         <tr>
             <td>
-                2021-10-19
-            </td>
-            <td>
                 2021-10-25
             </td>
             <td>
-                Specials
-            </td>
-            <td>
-                …88d80772
-            </td>
-            <td>
-                100008E2
-            </td>
-            <td>
-                SQLi - AND/OR Digit Operator Digit
-            </td>
-            <td>
-                N/A
-            </td>
-            <td>
-                Block
-            </td>
-        </tr>
-        <tr>
-            <td>
-                2021-10-19
-            </td>
-            <td>
-                2021-10-25
-            </td>
-            <td>
-                Specials
-            </td>
-            <td>
-                …a72a6b3a
-            </td>
-            <td>
-                100009CB2
-            </td>
-            <td>
-                SQLi - Equation
-            </td>
-            <td>
-                N/A
-            </td>
-            <td>
-                Block
-            </td>
-        </tr>
-        <tr>
-            <td>
-                2021-10-19
-            </td>
-            <td>
-                2021-10-25
-            </td>
-            <td>
-                Specials
-            </td>
-            <td>
-                …2ebc44ad
-            </td>
-            <td>
-                100008D
-            </td>
-            <td>
-                SQLi - Benchmark Function
-            </td>
-            <td>
-                N/A
-            </td>
-            <td>
-                Block
-            </td>
-        </tr>
-        <tr>
-            <td>
-                2021-10-19
-            </td>
-            <td>
-                2021-10-25
+                2021-11-01
             </td>
             <td>
                 Specials
@@ -134,7 +56,7 @@ order: 1
                 N/A
             </td>
             <td>
-                Block
+                Disabled
             </td>
         </tr>
     </tbody>
