@@ -38,25 +38,25 @@ pcx-content-type: changelog
     <tbody>
         <tr>
             <td>
-                2022-02-14
+                2022-02-21
             </td>
             <td>
-                2022-02-21
+                2022-02-28
             </td>
             <td>
                 Cloudflare Specials
             </td>
             <td>
-               ...69e0b97a
+               TBD
             </td>
             <td>
-                100400
+                100518
             </td>
             <td>
-                Atlassian Confluence - Code Injection - CVE:CVE-2021-26084 - Improve Rule Coverage
+                SAP - Code Injection - CVE:CVE-2022-22532
             </td>
             <td>
-                Block
+                N/A
             </td>
             <td>
                 Block
