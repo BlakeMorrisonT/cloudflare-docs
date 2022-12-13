@@ -1,26 +1,11 @@
 ---
-title: Retract settings
-pcx_content_type: navigation
-weight: 5
+_build:
+  publishResources: false
+  render: never
+  list: never
 ---
 
-# Retract settings
-
-When you are using an [API setup](/email-security/deployment/api/) for Area 1, you cannot prevent mail from reaching a recipient's mailbox.
-
-However — so long as you also have [**Journalling**](/email-security/deployment/api/setup/#journalling-setup) configured — you can set up **Message retraction** to take post-delivery actions against suspicious messages. These retractions happen through API integrations with Microsoft 365 and Google Workspaces (Gmail).
-
-## Retraction options
-
-Once you [set up retraction](#setup-guides), you can retract messages manually or set up automatic retractions.
-
-### Manual retraction
-
-To retract individual messages, locate the message in [Mail trace](/email-security/reporting/mailtrace/) and retract the message.
-
-### Automatic retraction
-
-You can also set up auto-retraction to automatically move messages matching certain dispositions to specific folders you within a user's mailbox.
+You can set up auto-retraction to automatically move messages matching certain dispositions to specific folders within a user's mailbox.
 
 To set up automatic retraction:
 
@@ -39,10 +24,3 @@ To set up automatic retraction:
     {{<Aside type="warning" header="Important">}}If you choose the hard delete retraction for Gmail, email messages will be permanently deleted. These messages cannot be recovered, even by admins.{{</Aside>}}
 
 6. Select **Update Auto-retract Settings**.
-
-## Setup guides
-
-For more details, refer to:
-
-- [Retraction Guide for Gmail (PDF)](/email-security/static/Gmail-Message-Retraction.pdf)
-- [Retraction Guide for Office 365 (PDF)](/email-security/static/O365-Message-Retraction.pdf)
