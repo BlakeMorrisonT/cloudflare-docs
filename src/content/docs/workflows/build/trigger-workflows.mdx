@@ -68,7 +68,7 @@ export default {
         // If an ?instanceId=<id> query parameter is provided, fetch the status
         // of an existing Workflow by its ID.
         if (instanceId) {
-            let instance = await env.MY_WORKFLOW.get(id);
+            let instance = await env.MY_WORKFLOW.get(instanceId);
 			return Response.json({
 				status: await instance.status(),
 			});
