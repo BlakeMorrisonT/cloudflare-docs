@@ -36,7 +36,7 @@
 		"@stoplight/json-schema-tree": "^4.0.0",
 		"@types/dompurify": "^3.0.5",
 		"@types/he": "^1.2.3",
-		"@types/node": "^22.7.8",
+		"@types/node": "^22.8.0",
 		"@types/react": "^18.3.12",
 		"@types/react-dom": "^18.3.1",
 		"algoliasearch": "^5.10.2",
