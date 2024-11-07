@@ -39,6 +39,18 @@ At a minimum, the `main_module` key is required to upload a Worker.
 
   * The part name that contains the module entry point of the Worker that will be executed. For example, `main.js`.
 
+* `assets` <Type text="object" /> <MetaInfo text="optional" />
+
+  * [Asset](/workers/static-assets/) configuration for a Worker.
+  * `config` <Type text="object" /> <MetaInfo text="optional" />
+    * [html_handling](/workers/static-assets/routing/#1-html_handling) determines the redirects and rewrites of requests for HTML content.
+    * [not_found_handling](/workers/static-assets/routing/#2-not_found_handling) determines the response when a request does not match a static asset, and there is no Worker script.
+  * `jwt` field provides a token authorizing assets to be attached to a Worker.
+
+* `keep_assets` <Type text="boolean" /> <MetaInfo text="optional" />
+
+  * Specifies whether assets should be retained from a previously uploaded Worker version; used in lieu of providing a completion token.
+
 * `bindings` array\[object] optional
 
   * [Bindings](#bindings) to expose in the Worker.
@@ -125,6 +137,10 @@ Workers can interact with resources on the Cloudflare Developer Platform using [
       "type": "analytics_engine",
       "name": "<VARIABLE_NAME>",
       "dataset": "<DATASET>"
+    },
+    {
+      "type": "assets",
+      "name": "<VARIABLE_NAME>"
     },
     {
       "type": "browser_rendering",
