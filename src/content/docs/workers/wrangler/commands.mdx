@@ -1325,7 +1325,6 @@ wrangler workflows instances terminate <WORKFLOW_NAME> <ID> [OPTIONS]
 - `ID` <Type text="string" /> <MetaInfo text="required" />
   - The ID of a Workflow instance.
 
-{/*
 ### `instances pause`
 
 Pause (until resumed) a Workflow instance.
@@ -1352,8 +1351,6 @@ wrangler workflows instances resume <WORKFLOW_NAME> <ID> [OPTIONS]
 - `ID` <Type text="string" /> <MetaInfo text="required" />
   - The ID of a Workflow instance.
 
-*/}
-
 ### `describe`
 
 ```sh
@@ -1367,7 +1364,7 @@ wrangler workflows describe <WORKFLOW_NAME> [OPTIONS]
 
 Trigger (create) a Workflow instance.
 ```sh
-wrangler workflows describe <WORKFLOW_NAME> <PARAMS> [OPTIONS]
+wrangler workflows trigger <WORKFLOW_NAME> <PARAMS> [OPTIONS]
 ```
 
 - `WORKFLOW_NAME` <Type text="string" /> <MetaInfo text="required" />
@@ -1377,8 +1374,10 @@ wrangler workflows describe <WORKFLOW_NAME> <PARAMS> [OPTIONS]
 
  ```sh
  # Pass optional params to the Workflow.
- wrangler workflows instances trigger my-workflow '{"hello":"world"}'
+ wrangler workflows trigger my-workflow '{"hello":"world"}'
  ```
+
+{/*
 
 ### `delete`
 
@@ -1390,6 +1389,8 @@ wrangler workflows delete <WORKFLOW_NAME> [OPTIONS]
 
 - `WORKFLOW_NAME` <Type text="string" /> <MetaInfo text="required" />
   - The name of a registered Workflow.
+
+*/}
 
 ## `tail`
 
