@@ -305,49 +305,51 @@ For information on installing a Cloudflare certificate for organizations, refer 
 
 ### Python
 
+Depending on which version of Python you have installed and your configuration, you may need to use either the `python` or `python3` command. If you use [virtual environments](https://docs.python.org/3/library/venv.html), you will need to repeat the following steps within each virtual environment.
+
 #### Python on Windows
 
 The command to install the certificate with Python on Windows automatically includes `pip` and `certifi` (the default certificate bundle for certificate validation).
 
 1. [Download a Cloudflare certificate](#download-the-cloudflare-root-certificate) in `.crt` format.
-2. Update the bundle to include the Cloudflare certificate:
+2. In a PowerShell terminal, install the `certifi` package:
    ```powershell
-   gc "$env:USERPROFILE\Downloads\certificate.crt" | ac C:\Python37\Lib\site-packages\pip\_vendor\certifi\cacert.pem
+   python -m pip install certifi
    ```
+3. Identify the Python CA store:
+   ```powershell
+   $CERT_PATH = python -c "import certifi; print(certifi.where())"
+   ```
+4. Update the bundle to include the Cloudflare certificate:
+   ```powershell
+   gc "$env:USERPROFILE\Downloads\certificate.crt" | ac $CERT_PATH
+   ```
+5. (Optional) Configure your system variables to point to the CA store by adding them to PowerShell's configuration file:
+   ```powershell
+   [System.Environment]::SetEnvironmentVariable('CERT_PATH', $CERT_PATH, 'Machine')
+   [System.Environment]::SetEnvironmentVariable('SSL_CERT_FILE', $CERT_PATH, 'Machine')
+   [System.Environment]::SetEnvironmentVariable('REQUESTS_CA_BUNDLE', $CERT_PATH, 'Machine')
+   ```
+6. Restart your terminal.
 
 #### Python on Mac and Linux
 
-1. In a terminal, install the `certifi` package:
-
+1. [Download a Cloudflare certificate](#download-the-cloudflare-root-certificate) in `.pem` format.
+2. In a terminal, install the `certifi` package:
    ```sh
-   pip install certifi
+   python -m pip install certifi
    ```
-
-2. Identify the CA store:
-
-   ```sh
-   python -m certifi
-   ```
-
-   ```sh output
-   ~/Library/Python/3.7/lib/python/site-packages/certifi/cert.pem
-   ```
-
-3. [Download a Cloudflare certificate](#download-the-cloudflare-root-certificate) in `.pem` format.
-
-4. Append the Cloudflare certificate to this CA store by running:
-
+3. Append the Cloudflare certificate to this CA store by running:
    ```sh
    echo | cat - certificate.pem >> $(python -m certifi)
    ```
-
-5. If needed, configure system variables to point to this CA store:
-
+4. (Optional) Configure your system variables to point to the CA store by adding them to your shell's configuration file (such as `~/.zshrc` or `~/.bash_profile`). For example:
    ```sh
-   export CERT_PATH=$(python -m certifi)
+   echo 'export CERT_PATH=$(python -c "import certifi; print(certifi.where())")
    export SSL_CERT_FILE=${CERT_PATH}
-   export REQUESTS_CA_BUNDLE=${CERT_PATH}
+   export REQUESTS_CA_BUNDLE=${CERT_PATH}' >> ~/.zshrc
    ```
+5. Restart your terminal.
 
 ### Git
 
