@@ -43,11 +43,35 @@ const { tableOfContents } = Astro.props.entry.data;
 <ImageZoom />
 <div class="sl-markdown-content">
     <slot />
-	<div class="!mt-[1.5em] block min-[1152px]:hidden">
+	<div class="feedback-prompt-content">
 		<FeedbackPrompt />
 	</div>
 </div>
 <style>
+	html {
+		.feedback-prompt-content {
+			margin-top: 1.5em !important;
+
+			@media (min-width: 1152px) {
+				& {
+					display: none;
+				}
+			}
+		}
+
+		&:not([data-has-toc]) {
+			.feedback-prompt-content {
+				display: block;
+			}
+		}
+
+		&[data-has-hero] {
+			.feedback-prompt-content {
+				display: none;
+			}
+		}
+	}
+
 	/* Custom styles for heading anchor links. */
 	.sl-markdown-content :global(.heading-wrapper) {
 		--icon-size: 0.75em;
