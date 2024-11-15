@@ -68,7 +68,7 @@
 		"puppeteer": "^23.7.1",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"react-textarea-autosize": "^8.5.4",
+		"react-textarea-autosize": "^8.5.5",
 		"redirects-in-workers": "^0.0.5",
 		"rehype-autolink-headings": "^7.1.0",
 		"rehype-external-links": "^3.0.0",
