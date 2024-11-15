@@ -3,9 +3,15 @@ pcx_content_type: how-to
 title: JumpCloud (SAML)
 ---
 
+import { Render } from "~/components";
+
 [JumpCloud](https://jumpcloud.com/#platform) provides SSO identity management. Cloudflare Access integrates with JumpCloud as a SAML identity provider.
 
+The following steps are specific to setting up JumpCloud with Cloudflare Access. For more information on configuring JumpCloud SSO application, refer to the [JumpCloud documentation](https://jumpcloud.com/support/integrate-with-cloudflare).
+
 ## Set up Jumpcloud as a SAML provider
+
+### 1. Create an SSO application in JumpCloud
 
 1. In the [JumpCloud Admin Portal](https://console.jumpcloud.com/#/home), go to **SSO Applications**.
 
@@ -34,23 +40,70 @@ title: JumpCloud (SAML)
 		```txt
 		https://<your-team-name>.cloudflareaccess.com/cdn-cgi/access/callback
 		```
-	3. Scroll up to **JumpCloud Metadata** and select **Export Metadata**. Save this XML file for use in a later step.
+	3. (Optional) Configure SAML attributes that you want to send to Cloudflare Access.
+
+	4. Scroll up to **JumpCloud Metadata** and select **Export Metadata**. Save this XML file for use in a [later step](#2-add-jumpcloud-to-zero-trust).
 
 9. In the **User Groups** tab, [assign user groups](https://jumpcloud.com/support/get-started-applications-saml-sso#managing-employee-access-to-applications) to this application.
 
 10. Select **Save**.
 
-11. In [Zero Trust](https://one.dash.cloudflare.com/), go to **Settings** > **Authentication**.
+### 2. Add JumpCloud to Zero Trust
 
-12. Under **Login methods**, select **Add new**.
+1. In [Zero Trust](https://one.dash.cloudflare.com/), go to **Settings** > **Authentication**.
 
-13. Select **SAML**.
+2. Under **Login methods**, select **Add new**.
 
-14. Upload your JumpCloud XML metadata file.
+3. Select **SAML**.
 
-15. Select **Save**.
+4. Upload your JumpCloud XML metadata file.
+
+5. (Optional) To enable SCIM, refer to [Synchronize users and groups](#synchronize-users-and-groups).
+
+6. (Optional) Under **Optional configurations**, configure [additional SAML options](#optional-configurations).
+
+7. Select **Save**.
 
 You can now [test your connection](/cloudflare-one/identity/idp-integration/#test-idps-in-zero-trust) and create [Access policies](/cloudflare-one/policies/access/) based on the configured login method and SAML attributes.
+
+## Synchronize users and groups
+
+The JumpCloud integration allows you to synchronize user groups and automatically deprovision users using [SCIM](/cloudflare-one/identity/users/scim/).
+
+### 1. Enable SCIM in Zero Trust
+
+<Render
+	file="access/enable-scim-on-dashboard"
+	params={{ idp: "JumpCloud"}}
+/>
+
+### 2. Configure SCIM in JumpCloud
+
+1. In the [JumpCloud Admin Portal](https://console.jumpcloud.com/#/home), go to **SSO Applications**.
+2. Select the Cloudflare application that was created when you [Set up JumpCloud as a SAML provider](/cloudflare-one/identity/idp-integration/jumpcloud-saml/#set-up-jumpcloud-as-a-saml-provider).
+3. Select the **Identity Management** tab.
+4. Make sure that **Enable management of User Groups and Group Membership in this application** is turned on.
+5. Select **Configure**.
+6. In the **Base URL** field, enter the **SCIM Endpoint** obtained from Zero Trust.
+7. In the **Token Key** field, enter the **SCIM Secret** obtained from Zero Trust.
+8. Select **Activate**. You will receive a confirmation that the Identity Management integration has been successfully verified.
+9. Select **Save**.
+
+<Render file="access/verify-scim-provisioning"/>
+
+### Provisioning attributes
+
+Provisioning attributes define the user and group properties that JumpCloud will synchronize with Cloudflare Access. By default, JumpCloud will send the following attributes during a SCIM update event:
+
+| JumpCloud user attribute| Cloudflare Access attribute |
+| ------------------ | ----------------------- |
+| `email` 					 | `email`            |
+| `firstname`        | `givenName`        |
+| `lastname`         | `surname`          |
+
+| JumpCloud group attribute | Cloudflare Access attribute |
+| ------------------ | ----------------------- |
+| `name` 					   | `groups`            |
 
 ## Example API configuration
 
