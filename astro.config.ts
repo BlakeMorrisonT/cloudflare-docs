@@ -158,6 +158,7 @@ export default defineConfig({
 				PageTitle: "./src/components/overrides/PageTitle.astro",
 				SocialIcons: "./src/components/overrides/SocialIcons.astro",
 				SkipLink: "./src/components/overrides/SkipLink.astro",
+				TableOfContents: "./src/components/overrides/TableOfContents.astro",
 			},
 			sidebar: await autogenSections(),
 			customCss: [
