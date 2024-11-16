@@ -913,6 +913,19 @@ wrangler r2 bucket create <NAME>
 - `--jurisdiction` <Type text="string" /> <MetaInfo text="optional" />
   - The jurisdiction where the R2 bucket is created. Refer to [jurisdictional restrictions](/r2/reference/data-location/#jurisdictional-restrictions).
 
+### `info`
+
+Get information about an R2 bucket, including the bucket size and number of objects.
+
+```txt
+wrangler r2 bucket info <NAME>
+```
+
+- `NAME` <Type text="string" /> <MetaInfo text="required" />
+  - The name of the R2 bucket to get information about.
+- `--jurisdiction` <Type text="string" /> <MetaInfo text="optional" />
+  - The jurisdiction where the bucket exists, if a jurisdiction has been specified. Refer to [jurisdictional restrictions](/r2/reference/data-location/#jurisdictional-restrictions).
+
 ### `delete`
 
 Delete an R2 bucket.
