@@ -286,7 +286,7 @@ entries:
     content_type: 🎥 Video
     pcx_content_type: tutorial
   - link: https://developers.cloudflare.com/workers/frameworks/framework-guides/nextjs/#video-tutorial
-    title: Deploy NextJS to your Workers Application 
+    title: Deploy NextJS to your Workers Application
     description: Watch to learn how to easily deploy your NextJS application to the Cloudflare global network.
     tags: [NextJS, Workers, Pages]
     languages: [TypeScript]
@@ -310,10 +310,10 @@ entries:
     updated: 2024-10-31
     difficulty: Intermediate
     content_type: 🎥 Video
-    pcx_content_type: tutorial     
+    pcx_content_type: tutorial
   - link: https://youtu.be/RmF05GpLE20
     title: DevTalk Episode 02 | Post-Quantum Cryptography
-    description: Bas Westerbaan is Cloudflare’s Research Lead on Post-Quantum efforts. His work ranges from cryptographic implementation and standardization, to driving large-scale experiment and subsequent deployment. 
+    description: Bas Westerbaan is Cloudflare’s Research Lead on Post-Quantum efforts. His work ranges from cryptographic implementation and standardization, to driving large-scale experiment and subsequent deployment.
     tags: [SSL]
     languages: [TypeScript]
     products: [SSL]
@@ -322,7 +322,7 @@ entries:
     updated: 2024-11-14
     difficulty: Beginner
     content_type: 🎥 Video
-    pcx_content_type: tutorial       
+    pcx_content_type: tutorial
   - link: https://youtu.be/xu4Wb-IppmM
     title: OpenAI Relay Server on Cloudflare Workers
     description: In this video, Craig Dennis walks you through the deployment of OpenAI's relay server to use with their realtime API.
@@ -334,7 +334,7 @@ entries:
     updated: 2024-11-14
     difficulty: Intermediate
     content_type: 🎥 Video
-    pcx_content_type: tutorial       
+    pcx_content_type: tutorial
   - link: https://developers.cloudflare.com/workers/runtime-apis/rpc/#video-tutorial
     title: Workers RPC Tutorial
     description: Learn how to implement RPC in your JavaScript applications and build serverless solutions.
@@ -346,10 +346,10 @@ entries:
     updated: 2024-11-10
     difficulty: Beginner
     content_type: 🎥 Video
-    pcx_content_type: tutorial       
+    pcx_content_type: tutorial
   - link: https://youtu.be/B2bLUc3iOsI
     title: Deploy your React App to Cloudflare Workers
-    description: Learn how to deploy an existing React application to Cloudflare Workers. 
+    description: Learn how to deploy an existing React application to Cloudflare Workers.
     tags: [Workers, Pages]
     languages: [TypeScript]
     products: [Workers, Pages]
@@ -358,10 +358,10 @@ entries:
     updated: 2024-11-05
     difficulty: Intermediate
     content_type: 🎥 Video
-    pcx_content_type: tutorial       
-  # - link: 
-  #   title: 
-  #   description: 
+    pcx_content_type: tutorial
+  # - link:
+  #   title:
+  #   description:
   #   tags: [Workers, Pages]
   #   languages: [TypeScript]
   #   products: [Workers, Pages]
@@ -370,4 +370,4 @@ entries:
   #   updated: 2024-11-14
   #   difficulty: Intermediate
   #   content_type: 🎥 Video
-  #   pcx_content_type: tutorial       
+  #   pcx_content_type: tutorial
