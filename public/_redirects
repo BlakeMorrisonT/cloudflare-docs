@@ -1786,6 +1786,7 @@
 /cloudflare-one/connections/connect-apps/use_cases/* /cloudflare-one/connections/connect-networks/use-cases/:splat 301
 /cloudflare-one/connections/connect-apps/* /cloudflare-one/connections/connect-networks/:splat 301
 /cloudflare-one/connections/connect-devices/warp/exclude-traffic/* /cloudflare-one/connections/connect-devices/warp/configure-warp/route-traffic/:splat 301
+/cloudflare-one/connections/connect-devices/warp/user-side-certificates/* /cloudflare-one/connections/connect-devices/user-side-certificates/:splat 301
 /cloudflare-one/examples/* /cloudflare-one/api-terraform/access-api-examples/:splat 301
 /cloudflare-one/faq/teams-* /cloudflare-one/faq/:splat 301
 /cloudflare-one/learning-paths/* /cloudflare-one/implementation-guides/:splat 301

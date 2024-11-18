@@ -29,23 +29,23 @@ import { Details } from "~/components";
 <sup>*</sup> Only supported on Debian-based systems.
 </Details>
 
-The WARP client can automatically install a Cloudflare certificate or [custom root certificate](/cloudflare-one/connections/connect-devices/warp/user-side-certificates/custom-certificate/) on Windows, macOS, and Debian/Ubuntu Linux devices. On mobile devices and Red Hat-based systems, you will need to [install the certificate manually](/cloudflare-one/connections/connect-devices/warp/user-side-certificates/manual-deployment/).
+The [WARP client](/cloudflare-one/connections/connect-devices/warp/) can automatically install a Cloudflare certificate or [custom root certificate](/cloudflare-one/connections/connect-devices/user-side-certificates/custom-certificate/) on Windows, macOS, and Debian/Ubuntu Linux devices. On mobile devices and Red Hat-based systems, you will need to [install the certificate manually](/cloudflare-one/connections/connect-devices/user-side-certificates/manual-deployment/).
 
-The certificate is required if you want to [apply HTTP policies to encrypted websites](/cloudflare-one/policies/gateway/http-policies/tls-decryption/), display custom block pages, and more.
+The certificate is required if you want to [apply HTTP policies to encrypted websites](/cloudflare-one/policies/gateway/http-policies/tls-decryption/), display custom [block pages](/cloudflare-one/policies/gateway/block-page/), and more.
 
 ## Install a certificate using WARP
 
-1. (Optional) [Upload](/cloudflare-one/connections/connect-devices/warp/user-side-certificates/custom-certificate/) a custom root certificate to Cloudflare.
+1. (Optional) [Upload](/cloudflare-one/connections/connect-devices/user-side-certificates/custom-certificate/) a custom root certificate to Cloudflare.
 2. In [Zero Trust](https://one.dash.cloudflare.com/), go to **Settings** > **WARP Client**.
 3. Turn on [**Install CA to system certificate store**](/cloudflare-one/connections/connect-devices/warp/configure-warp/warp-settings/#install-ca-to-system-certificate-store).
 4. [Install](/cloudflare-one/connections/connect-devices/warp/download-warp/) the WARP client on the device.
 5. [Enroll the device](/cloudflare-one/connections/connect-devices/warp/deployment/manual-deployment/) in your Zero Trust organization.
 6. (Optional) If the device is running macOS Ventura or newer, [manually trust the certificate](#manually-trust-the-certificate).
 
-WARP will install the [certificate set to **In-Use**](/cloudflare-one/connections/connect-devices/warp/user-side-certificates/#certificate-status). This certificate can be either a [Cloudflare-generated certificate](/cloudflare-one/connections/connect-devices/warp/user-side-certificates/#generate-a-cloudflare-root-certificate) or a [custom certificate](/cloudflare-one/connections/connect-devices/warp/user-side-certificates/custom-certificate/). If you turn on a new certificate for inspection, WARP will automatically install the new certificate and remove the old certificate from your users' devices.
+WARP will install the [certificate set to **In-Use**](/cloudflare-one/connections/connect-devices/user-side-certificates/#certificate-status). This certificate can be either a [Cloudflare-generated certificate](/cloudflare-one/connections/connect-devices/user-side-certificates/#generate-a-cloudflare-root-certificate) or a [custom certificate](/cloudflare-one/connections/connect-devices/user-side-certificates/custom-certificate/). If you turn on a new certificate for inspection, WARP will automatically install the new certificate and remove the old certificate from your users' devices.
 
 :::note[Important]
-WARP only installs the system certificate -- it does not install the certificate to individual applications. You will need to [manually add the certificate](/cloudflare-one/connections/connect-devices/warp/user-side-certificates/manual-deployment/#add-the-certificate-to-applications) to applications that rely on their own certificate store.
+WARP only installs the system certificate -- it does not install the certificate to individual applications. You will need to [manually add the certificate](/cloudflare-one/connections/connect-devices/user-side-certificates/manual-deployment/#add-the-certificate-to-applications) to applications that rely on their own certificate store.
 :::
 
 ## Access the installed certificate

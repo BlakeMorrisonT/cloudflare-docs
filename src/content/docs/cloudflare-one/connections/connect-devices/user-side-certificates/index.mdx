@@ -2,14 +2,14 @@
 pcx_content_type: get-started
 title: User-side certificates
 sidebar:
-  order: 4
+  order: 2
 banner:
   content: The default global Cloudflare root certificate will expire on 2025-02-02. If you installed the default Cloudflare certificate before 2024-10-17, you must <a href="#generate-a-cloudflare-root-certificate">generate a new certificate</a> and activate it for your Zero Trust organization to avoid inspection errors.
 ---
 
 Advanced security features such as [HTTPS traffic inspection](/cloudflare-one/policies/gateway/http-policies/tls-decryption/), [Data Loss Prevention](/cloudflare-one/policies/data-loss-prevention/), [anti-virus scanning](/cloudflare-one/policies/gateway/http-policies/antivirus-scanning/), [Access for Infrastructure](/cloudflare-one/applications/non-http/infrastructure-apps/), and [Browser Isolation](/cloudflare-one/policies/browser-isolation/) require users to install and trust a root certificate on their device. You can either install the certificate provided by Cloudflare (default option), or generate your own custom certificate and upload it to Cloudflare.
 
-Gateway [generates a unique root CA](#generate-a-cloudflare-root-certificate) for each Zero Trust account and deploys its across the Cloudflare global network. Alternatively, Enterprise users can upload and deploy their own [custom certificate](/cloudflare-one/connections/connect-devices/warp/user-side-certificates/custom-certificate/).
+Gateway [generates a unique root CA](#generate-a-cloudflare-root-certificate) for each Zero Trust account and deploys its across the Cloudflare global network. Alternatively, Enterprise users can upload and deploy their own [custom certificate](/cloudflare-one/connections/connect-devices/user-side-certificates/custom-certificate/).
 
 ## Certificate status
 
@@ -51,7 +51,7 @@ To activate your root certificate:
 3. Select the certificate you want to activate.
 4. Select **Activate**.
 
-The status of the certificate will change to **Pending** while it deploys. Once the status of your certificate is **Active**, you can install it on your user's devices either [with WARP](/cloudflare-one/connections/connect-devices/warp/user-side-certificates/automated-deployment/) or [manually](/cloudflare-one/connections/connect-devices/warp/user-side-certificates/manual-deployment/).
+The status of the certificate will change to **Pending** while it deploys. Once the status of your certificate is **Active**, you can install it on your user's devices either [with WARP](/cloudflare-one/connections/connect-devices/user-side-certificates/automated-deployment/) or [manually](/cloudflare-one/connections/connect-devices/user-side-certificates/manual-deployment/).
 
 Once you deploy and install your certificate, you can turn it on for use in inspection:
 

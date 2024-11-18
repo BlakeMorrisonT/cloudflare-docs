@@ -18,7 +18,7 @@ This procedure is only required to enable specific Cloudflare Zero Trust feature
 
 :::
 
-If your device does not support [certificate installation via WARP](/cloudflare-one/connections/connect-devices/warp/user-side-certificates/automated-deployment/), you can manually install a Cloudflare certificate. You must add the certificate to both the [system keychain](#add-the-certificate-to-operating-systems) and to [individual application stores](#add-the-certificate-to-applications). These steps must be performed on each new device that is to be subject to HTTP filtering.
+If your device does not support [certificate installation via WARP](/cloudflare-one/connections/connect-devices/user-side-certificates/automated-deployment/), you can manually install a Cloudflare certificate. You must add the certificate to both the [system keychain](#add-the-certificate-to-operating-systems) and to [individual application stores](#add-the-certificate-to-applications). These steps must be performed on each new device that is to be subject to HTTP filtering.
 
 ## Download the Cloudflare root certificate
 
@@ -26,7 +26,7 @@ If your device does not support [certificate installation via WARP](/cloudflare-
 You can only download certificates from the Zero Trust dashboard.
 :::
 
-First, [generate](/cloudflare-one/connections/connect-devices/warp/user-side-certificates/#generate-a-cloudflare-root-certificate) and download a Cloudflare certificate. The certificate is available in both `.pem` and `.crt` file format. Certain applications require the certificate to be in a specific file type, so ensure you download the most appropriate file for your use case.
+First, [generate](/cloudflare-one/connections/connect-devices/user-side-certificates/#generate-a-cloudflare-root-certificate) and download a Cloudflare certificate. The certificate is available in both `.pem` and `.crt` file format. Certain applications require the certificate to be in a specific file type, so ensure you download the most appropriate file for your use case.
 
 1. In [Zero Trust](https://one.dash.cloudflare.com/), go to **Settings** > **Resources**.
 2. In **Certificates**, select **Manage**.
