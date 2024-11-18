@@ -9,7 +9,7 @@ entries:
     title: Workers KV REST API bulk operations provide granular errors
     description: |-
 
-      The REST API endpoints for bulk operations ([write](/api/operations/workers-kv-namespace-write-multiple-key-value-pairs), [delete](workers-kv-namespace-delete-multiple-key-value-pairs)) now return the keys of operations that failed during the bulk operation. The updated response bodies are documented in the [REST API documentation](/api/operations/workers-kv-namespace-list-namespaces) and contain the following information in the `result` field:
+      The REST API endpoints for bulk operations ([write](/api/operations/workers-kv-namespace-write-multiple-key-value-pairs), [delete](/api/operations/workers-kv-namespace-delete-multiple-key-value-pairs)) now return the keys of operations that failed during the bulk operation. The updated response bodies are documented in the [REST API documentation](/api/operations/workers-kv-namespace-list-namespaces) and contain the following information in the `result` field:
 
       ```
       {
