@@ -24,6 +24,10 @@ Then, create a new AI Gateway.
 
 <Render file="create-gateway" />
 
+## Choosing gateway authentication
+
+When setting up a new gateway, you can choose between an authenticated and unauthenticated gateway. Enabling an authenticated gateway requires each request to include a valid authorization token, adding an extra layer of security. We recommend using an authenticated gateway when storing logs to prevent unauthorized access and protect against invalid requests that can inflate log storage usage and make it harder to find the data you need. Learn more about setting up an [Authenticated Gateway](/ai-gateway/configuration/authentication/).
+
 ## Connect application
 
 Next, connect your AI provider to your gateway.
