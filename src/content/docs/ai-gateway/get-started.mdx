@@ -34,6 +34,8 @@ Next, connect your AI provider to your gateway.
 
 AI Gateway offers multiple endpoints for each Gateway you create - one endpoint per provider, and one Universal Endpoint.
 
+Additionally, AI Gateway has a [WebSockets API](/ai-gateway/configuration/websockets-api/) which provides a single persistent connection, enabling continuous communication. This API supports all AI providers connected to AI Gateway, including those that do not natively support WebSockets.
+
 Below is a list of our supported model providers:
 
 <DirectoryListing folder="ai-gateway/providers" />
