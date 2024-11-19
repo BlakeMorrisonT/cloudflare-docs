@@ -583,3 +583,17 @@ entries:
     associatedProducts: Web Analytics
     nextSteps: No action is needed. This notification is a weekly summary with reports from your Web Analytics account. Refer to [Notifications](https://dash.cloudflare.com/?to=/:account/notifications) in the Cloudflare dashboard to refine your notifications settings.
     otherFilters: None.
+
+  - name: Image Notifications
+    audience: Customers using [Direct creator uploads](/images/upload-images/direct-creator-upload/) to upload images.
+    availability: Cloudflare images subscription.
+    associatedProducts: Cloudflare Images
+    nextSteps: No action is needed.
+    otherFilters: None.
+
+  - name: Image Transformation Notifications
+    audience: Customers who are using free image transformations and want to be notified if they exceed their free quota.
+    availability: All Cloudflare plans.
+    associatedProducts: Cloudflare Images
+    nextSteps: No action is needed.
+    otherFilters: None.
