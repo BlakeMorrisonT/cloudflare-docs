@@ -30,7 +30,7 @@
 		"@astrojs/react": "^3.6.2",
 		"@astrojs/rss": "^4.0.9",
 		"@astrojs/sitemap": "^3.2.1",
-		"@astrojs/starlight": "^0.28.3",
+		"@astrojs/starlight": "^0.29.2",
 		"@astrojs/starlight-docsearch": "^0.2.0",
 		"@astrojs/starlight-tailwind": "^2.0.3",
 		"@astrojs/tailwind": "^5.1.2",
