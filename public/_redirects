@@ -358,8 +358,9 @@
 /support/dns/troubleshooting/why-was-my-domain-deleted-from-cloudflare/ /dns/zone-setups/troubleshooting/domain-deleted/ 301
 
 /durable-objects/examples/durable-object-example/ /durable-objects/examples/durable-object-in-memory-state/ 301
-/durable-objects/api/hibernatable-websockets-api/ /durable-objects/api/websockets/ 301
+/durable-objects/api/hibernatable-websockets-api/ /durable-objects/best-practices/websockets/ 301
 /durable-objects/api/alarms-in-durable-objects/ /durable-objects/api/alarms/ 301
+/durable-objects/api/websockets/ /durable-objects/best-practices/websockets/ 301
 /durable-objects/platform/data-location/ /durable-objects/reference/data-location/ 301
 /durable-objects/platform/environments/ /durable-objects/reference/environments/ 301
 /durable-objects/platform/graphql-analytics/ /durable-objects/observability/graphql-analytics/ 301
@@ -367,7 +368,7 @@
 /durable-objects/learning/ /durable-objects/reference/ 301
 /durable-objects/learning/in-memory-state/ /durable-objects/reference/in-memory-state/ 301
 /durable-objects/learning/durable-objects-migrations/ /durable-objects/reference/durable-objects-migrations/ 301
-/durable-objects/learning/websockets/ /durable-objects/reference/websockets/ 301
+/durable-objects/learning/websockets/ /durable-objects/best-practices/websockets/ 301
 /durable-objects/examples/durable-object-location-example/ /durable-objects/examples/durable-object-in-memory-state/ 301
 /durable-objects/how-to/ /durable-objects/best-practices/ 301
 /durable-objects/how-to/access-durable-object-from-a-worker/ /durable-objects/best-practices/access-durable-objects-from-a-worker/ 301
@@ -377,6 +378,7 @@
 /durable-objects/reference/error-handling/ /durable-objects/best-practices/error-handling/ 301
 /durable-objects/reference/troubleshooting/ /durable-objects/observability/troubleshooting/ 301
 /durable-objects/reference/graphql-analytics/ /durable-objects/observability/graphql-analytics/ 301
+/durable-objects/reference/websockets/ /durable-objects/best-practices/websockets/ 301
 /durable-objects/api/transactional-storage-api/ /durable-objects/api/storage-api/ 301
 /durable-objects/platform/changelog/ /durable-objects/changelog/ 301
 /durable-objects/glossary/ /durable-objects/reference/glossary/ 301
