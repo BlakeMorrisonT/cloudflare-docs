@@ -117,7 +117,16 @@ For more about the lifecycle of calling a Worker over a Service Binding via RPC,
 
 ## Local development
 
-Local development is supported for Service bindings. For each Worker, open a new terminal and use [`wrangler dev`](/workers/wrangler/commands/#dev) in the relevant directory or use the `SCRIPT` option to specify the relevant Worker's entrypoint.
+Local development is supported for Service bindings. For each Worker, open a new terminal and use [`wrangler dev`](/workers/wrangler/commands/#dev) in the relevant directory. When running `wrangler dev`, service bindings will show as `connected`/`not connected` depending on whether Wrangler can find a running `wrangler dev` session for that Worker. For example:
+
+```sh
+$ wrangler dev
+...
+Your worker has access to the following bindings:
+- Services:
+  - SOME_OTHER_WORKER: some-other-worker connected
+  - ANOTHER_WORKER: another-worker not connected
+```
 
 ## Deployment
 
