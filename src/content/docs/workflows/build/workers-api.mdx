@@ -107,6 +107,10 @@ You can bind to a Workflow by defining a `[[workflows]]` binding within your `wr
 
 For example, to bind to a Workflow called `workflows-starter` and to make it available on the `MY_WORKFLOW` variable to your Worker script, you would configure the following fields within the `[[workflows]]` binding definition:
 
+import { WranglerConfig } from "~/components";
+
+<WranglerConfig>
+
 ```toml title="wrangler.toml"
 #:schema node_modules/wrangler/config-schema.json
 name = "workflows-starter"
@@ -122,11 +126,17 @@ binding = "MY_WORKFLOW"
 class_name = "MyWorkflow"
 ```
 
+</WranglerConfig>
+
 ### Cross-script calls
 
 You can also bind to a Workflow that is defined in a different Worker script from the script your Workflow definition is in. To do this, provide the `script_name` key with the name of the script to the `[[workflows]]` binding definition in your `wrangler.toml` configuration.
 
 For example, if your Workflow is defined in a Worker script named `billing-worker`, but you are calling it from your `web-api-worker` script, your `wrangler.toml` would resemble the following:
+
+
+
+<WranglerConfig>
 
 ```toml title="wrangler.toml"
 #:schema node_modules/wrangler/config-schema.json
@@ -145,6 +155,8 @@ class_name = "MyWorkflow"
 # required if the Workflow is defined in another script.
 script_name = "billing-worker"
 ```
+
+</WranglerConfig>
 
 ## Workflow
 
