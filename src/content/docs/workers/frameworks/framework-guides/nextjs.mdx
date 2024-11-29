@@ -35,7 +35,11 @@ To create a new Next.js app, pre-configured to run on Cloudflare using [`@openne
 
 ## Video Tutorial
 
-<Stream videoId="0b28fdd5938c4929bd7fdedcd167044d" videoTitle="Deploy NextJS to Your Workers Application" thumbnailTimeOrURL="2.5s" />
+<Stream
+	videoId="0b28fdd5938c4929bd7fdedcd167044d"
+	videoTitle="Deploy NextJS to Your Workers Application"
+	thumbnailTimeOrURL="2.5s"
+/>
 
 ## Existing Next.js apps
 
@@ -70,7 +74,7 @@ main = ".worker-next/index.mjs"
 name = "my-app"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
-experimental_assets = { directory = ".worker-next/assets", binding = "ASSETS" }
+assets = { directory = ".worker-next/assets", binding = "ASSETS" }
 ```
 
 </WranglerConfig>
