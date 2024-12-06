@@ -41,6 +41,7 @@ Wrangler offers a number of commands to manage your Cloudflare Workers.
 - [`dispatch-namespace`](#dispatch-namespace) - Interact with a [dispatch namespace](/cloudflare-for-platforms/workers-for-platforms/reference/how-workers-for-platforms-works/#dispatch-namespace).
 - [`mtls-certificate`](#mtls-certificate) - Manage certificates used for mTLS connections.
 - [`types`](#types) - Generate types from bindings and module rules in configuration.
+- [`telemetry`](#telemetry) - Configure whether Wrangler can collect anonymous usage data.
 
 :::note
 
@@ -2602,3 +2603,37 @@ The minimum required Wrangler version to use this command is 3.66.0.
   - A custom path must have a `d.ts` extension.
 
 <Render file="wrangler-commands/global-flags" product="workers" />
+
+---
+
+## `telemetry`
+
+Cloudflare collects anonymous usage data to improve Wrangler. You can learn more about this in our [data policy](https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md).
+
+You can manage sharing of usage data at any time using these commands.
+
+### `disable`
+
+Disable telemetry collection for Wrangler.
+
+```txt
+wrangler telemetry disable
+```
+
+### `enable`
+
+Enable telemetry collection for Wrangler.
+
+```txt
+wrangler telemetry enable
+```
+
+### `status`
+
+Check whether telemetry collection is currently enabled. The return result is specific to the directory where you have run the command.
+
+This will resolve the global status set by `wrangler telemetry disable / enable`, the environment variable [`WRANGLER_SEND_METRICS`](/workers/wrangler/system-environment-variables/#supported-environment-variables), and the [`send_metrics`](/workers/wrangler/configuration/#top-level-only-keys) key in `wrangler.toml`.
+
+```txt
+wrangler telemetry status
+```
