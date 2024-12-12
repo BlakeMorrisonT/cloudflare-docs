@@ -49,7 +49,7 @@
 		"@types/react-dom": "^18.3.1",
 		"algoliasearch": "^5.15.0",
 		"astro": "^4.16.17",
-		"astro-breadcrumbs": "^3.2.2",
+		"astro-breadcrumbs": "^3.3.1",
 		"astro-icon": "^1.1.2",
 		"astro-live-code": "^0.0.4",
 		"date-fns": "^4.1.0",
