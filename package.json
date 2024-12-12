@@ -27,7 +27,7 @@
 	"devDependencies": {
 		"@astro-community/astro-embed-youtube": "^0.5.6",
 		"@astrojs/check": "^0.9.4",
-		"@astrojs/react": "^3.6.2",
+		"@astrojs/react": "^3.6.3",
 		"@astrojs/rss": "^4.0.9",
 		"@astrojs/sitemap": "^3.2.1",
 		"@astrojs/starlight": "^0.29.2",
