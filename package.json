@@ -69,7 +69,7 @@
 		"mermaid": "^11.4.1",
 		"node-html-parser": "^6.1.13",
 		"patch-package": "^8.0.0",
-		"playwright": "^1.49.0",
+		"playwright": "^1.49.1",
 		"prettier": "^3.4.2",
 		"prettier-plugin-astro": "^0.14.1",
 		"puppeteer": "^23.10.4",
