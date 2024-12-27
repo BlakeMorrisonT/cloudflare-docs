@@ -28,8 +28,8 @@ This policy allows users to access official corporate domains. By deploying the 
 
 <TabItem label="API">
 
-```sh
-curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
+```bash
+curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule \
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer <API_TOKEN>" \
 --data '{
@@ -63,8 +63,8 @@ Block [security categories](/cloudflare-one/policies/gateway/domain-categories/#
 
 <TabItem label="API">
 
-```sh
-curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
+```bash
+curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule \
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer <API_TOKEN>" \
 --data '{
@@ -96,8 +96,8 @@ The categories included in this policy are not always a security threat, but blo
 
 <TabItem label="API">
 
-```sh
-curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
+```bash
+curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule \
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer <API_TOKEN>" \
 --data '{
@@ -129,8 +129,8 @@ curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
 
 <TabItem label="API">
 
-```sh
-curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
+```bash
+curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule \
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer <API_TOKEN>" \
 --data '{
@@ -162,8 +162,8 @@ You can implement policies to block websites hosted in countries categorized as 
 
 <TabItem label="API">
 
-```sh
-curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
+```bash
+curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule \
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer <API_TOKEN>" \
 --data '{
@@ -197,8 +197,8 @@ Blocking [frequently misused](https://www.spamhaus.org/statistics/tlds/) top-lev
 
 <TabItem label="API">
 
-```sh
-curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
+```bash
+curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule \
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer <API_TOKEN>" \
 --data '{
@@ -231,8 +231,8 @@ To protect against [sophisticated phishing attacks](https://blog.cloudflare.com/
 
 <TabItem label="API">
 
-```sh
-curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
+```bash
+curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule \
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer <API_TOKEN>" \
 --data '{
@@ -247,6 +247,8 @@ curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
   "identity": ""
 }'
 ```
+
+To get the UUIDs of your lists, use the [List Zero Trust lists](/api/resources/zero_trust/subresources/gateway/subresources/lists/methods/list/) endpoint.
 
 </TabItem> </Tabs>
 
@@ -264,8 +266,8 @@ To safeguard user privacy, some organizations will block tracking domains such a
 
 <TabItem label="API">
 
-```sh
-curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
+```bash
+curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule \
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer <API_TOKEN>" \
 --data '{
@@ -280,6 +282,8 @@ curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
   "identity": ""
 }'
 ```
+
+To get the UUIDs of your lists, use the [List Zero Trust lists](/api/resources/zero_trust/subresources/gateway/subresources/lists/methods/list/) endpoint.
 
 </TabItem> </Tabs>
 
@@ -297,8 +301,8 @@ Block specific IP addresses that are known to be malicious or pose a threat to y
 
 <TabItem label="API">
 
-```sh
-curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
+```bash
+curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule \
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer <API_TOKEN>" \
 --data '{
@@ -313,6 +317,8 @@ curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
   "identity": ""
 }'
 ```
+
+To get the UUIDs of your lists, use the [List Zero Trust lists](/api/resources/zero_trust/subresources/gateway/subresources/lists/methods/list/) endpoint.
 
 </TabItem> </Tabs>
 
@@ -330,8 +336,8 @@ The CIPA (Children's Internet Protection Act) Filter is a collection of subcateg
 
 <TabItem label="API">
 
-```sh
-curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
+```bash
+curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule \
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer <API_TOKEN>" \
 --data '{
@@ -363,8 +369,8 @@ SafeSearch is a feature of search engines that helps you filter explicit or offe
 
 <TabItem label="API">
 
-```sh
-curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
+```bash
+curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule \
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer <API_TOKEN>" \
 --data '{
@@ -397,8 +403,8 @@ curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
 
 <TabItem label="API">
 
-```sh
-curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
+```bash
+curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule \
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer <API_TOKEN>" \
 --data '{
@@ -435,8 +441,8 @@ The following example includes two policies. The first policy allows the specifi
 
 <TabItem label="API">
 
-```sh
-curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
+```bash
+curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule \
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer <API_TOKEN>" \
 --data '{
@@ -467,8 +473,8 @@ curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
 
 <TabItem label="API">
 
-```sh
-curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
+```bash
+curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule \
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer <API_TOKEN>" \
 --data '{
@@ -510,8 +516,8 @@ Force users to connect with IPv4 by blocking IPv6 resolution.
 
 <TabItem label="API">
 
-```sh
-curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
+```bash
+curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule \
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer <API_TOKEN>" \
 --data '{
@@ -544,8 +550,8 @@ Force users to connect with IPv6 by blocking IPv4 resolution.
 
 <TabItem label="API">
 
-```sh
-curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule\
+```bash
+curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule \
 --header "Content-Type: application/json" \
 --header "Authorization: Bearer <API_TOKEN>" \
 --data '{
