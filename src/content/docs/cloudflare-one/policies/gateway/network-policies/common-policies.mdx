@@ -260,3 +260,50 @@ curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule \
 ```
 
 </TabItem> </Tabs>
+
+## Override IP address
+
+Override traffic directed toward a specific IP address with a different IP address.
+
+<Tabs syncKey="dashPlusAPI"> <TabItem label="Dashboard">
+
+| Selector         | Operator | Value          | Logic | Action           |
+| ---------------- | -------- | -------------- | ----- | ---------------- |
+| Destination IP   | in       | `203.0.113.17` | And   | Network Override |
+| Destination Port | is       | `80`           |       |                  |
+
+| Override IP | Override Port |
+| ----------- | ------------- |
+| `1.1.1.1`   | `80`          |
+
+</TabItem>
+
+<TabItem label="API">
+
+```bash
+curl https://api.cloudflare.com/client/v4/accounts/{account_id}/gateway/rule \
+--header "Content-Type: application/json" \
+--header "Authorization: Bearer <API_TOKEN>" \
+--data '{
+  "name": "Override example.com with 1.1.1.1",
+  "description": "Override a site'\''s IP address with another IP",
+  "enabled": true,
+  "action": "l4_override",
+  "filters": [
+    "l4"
+  ],
+  "traffic": "net.dst.ip in {203.0.113.17} and net.dst.port == 80",
+  "identity": "",
+  "device_posture": "",
+  "rule_settings": {
+    "l4override": {
+      "ip": "1.1.1.1",
+      "port": 80
+    },
+    "override_host": "",
+    "override_ips": null
+  }
+}'
+```
+
+</TabItem> </Tabs>
