@@ -7,26 +7,9 @@ import { Render } from "~/components"
 
 #### Proxy eligibility
 
-By default, `A`, `AAAA`, and `CNAME` DNS records that serve `HTTP/HTTPS` traffic can be proxied.
+Only `A`, `AAAA`, and `CNAME` DNS records can be proxied.
 
 If you encounter a `CNAME` record that you cannot proxy — usually associated with another CDN provider — a proxied version of that record will cause connectivity errors. Cloudflare is purposely preventing that record from being proxied to protect you from a misconfiguration.
-
-The following types of DNS records may be in your DNS configuration, but cannot be proxied:
-
-* `CAA`
-* `DKIM`
-* `DMARC`
-* `DNSKEY`
-* `DS`
-* `HTTPS`
-* `MX`
-* `NS`
-* `PTR`
-* `SOA`
-* `SPF`
-* `SRV`
-* `SVCB`
-* `TXT`
 
 #### Ports and protocols
 
@@ -47,5 +30,5 @@ For enhanced security, we recommend rolling your origin IP addresses at your hos
 
 #### Windows authentication
 
-Because Microsoft Integrated Windows Authentication, NTLM, and Kerberos violate HTTP/1.1 specifications, they are not compatible with proxied DNS records. 
+Because Microsoft Integrated Windows Authentication, NTLM, and Kerberos violate HTTP/1.1 specifications, they are not compatible with proxied DNS records.
 :::
