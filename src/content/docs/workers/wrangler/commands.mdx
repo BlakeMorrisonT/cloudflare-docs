@@ -860,6 +860,23 @@ wrangler r2 bucket domain update <NAME> [OPTIONS]
 
 <Render file="wrangler-commands/global-flags" product="workers" />
 
+### `domain get`
+
+Get [custom domain](/r2/buckets/public-buckets/#custom-domains) connected to an R2 bucket.
+
+```txt
+wrangler r2 bucket domain get <NAME> [OPTIONS]
+```
+
+- `NAME` <Type text="string" /> <MetaInfo text="required" />
+  - The name of the R2 bucket whose custom domain to retrieve.
+- `--domain` <Type text="string" /> <MetaInfo text="required" />
+  - The custom domain to get information for.
+- `--jurisdiction` <Type text="string" /> <MetaInfo text="optional" />
+  - The jurisdiction where the bucket exists, if a jurisdiction has been specified. Refer to [jurisdictional restrictions](/r2/reference/data-location/#jurisdictional-restrictions).
+
+<Render file="wrangler-commands/global-flags" product="workers" />
+
 ### `domain list`
 
 List [custom domains](/r2/buckets/public-buckets/#custom-domains) for an R2 bucket.
