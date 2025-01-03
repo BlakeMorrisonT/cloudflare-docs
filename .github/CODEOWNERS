@@ -180,8 +180,8 @@
 
 # Radar
 
-/src/content/docs/radar/ @meddulla @G4brym @tiagoad @cloudflare/pcx-technical-writing
-/src/content/changelogs/radar.yaml @meddulla @G4brym @tiagoad @cloudflare/pcx-technical-writing
+/src/content/docs/radar/ @meddulla @G4brym @tiagoad @andre-j3sus @cloudflare/pcx-technical-writing
+/src/content/changelogs/radar.yaml @meddulla @G4brym @tiagoad @andre-j3sus @cloudflare/pcx-technical-writing
 
 # Reference architecture
 
