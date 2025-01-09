@@ -224,6 +224,11 @@ If none of the above leads to a resolution, request the following information fr
 - An [MTR or traceroute](/support/troubleshooting/general-troubleshooting/gathering-information-for-troubleshooting-sites/#perform-a-traceroute) from your origin web server to a [Cloudflare IP address](http://www.cloudflare.com/ips) that most commonly connected to your origin web server before the issue occurred. Identify a connecting Cloudflare IP recorded in the origin web server logs.
 - Details from the hosting provider's investigation such as pertinent logs or conversations with the hosting provider.
 
+:::note
+
+A Worker using a Custom Domain, performing a `fetch` to its own hostname will cause a 522 error. Consider using a [Route](/workers/configuration/routing/) or target another hostname instead.
+:::
+
 ---
 
 ## Error 523: origin is unreachable
