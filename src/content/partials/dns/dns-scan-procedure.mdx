@@ -37,9 +37,9 @@ Since the quick scan is not guaranteed to find all existing DNS records, you nee
   | Type | Name    | Content      | Proxy status | TTL    |
   | ---- | ------- | ------------ | ------------ | ------ |
   | A    | `mail`  | `192.0.2.1`  | DNS Only      | Auto   |
-  | MX    | `example.com`  | `john.mx.example-server.test`  | DNS Only      | Auto   |
+  | MX    | `example.com`  | `5 john.mx.example-server.test`  | DNS Only      | Auto   |
 	| TXT    | `_dmarc`  | `"v=DMARC1; p=reject; sp=...`  | DNS Only      | Auto   |
-  | TXT    | `*._domainkey`  | `"v=DKIM1; p="`  | DNS Only      | Auto   |
-  | TXT    | `example.com`  | `"v=spf1 -all"`  | DNS Only      | Auto   |
+  | TXT    | `*._domainkey`  | `"v=DKIM1; k=rsa; p=..."`  | DNS Only      | Auto   |
+  | TXT    | `example.com`  | `"v=spf1 ip4:..."`  | DNS Only      | Auto   |
 
   </Details>
