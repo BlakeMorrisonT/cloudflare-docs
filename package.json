@@ -57,7 +57,7 @@
 		"detype": "1.0.12",
 		"dompurify": "3.2.3",
 		"dot-prop": "^9.0.0",
-		"fast-glob": "^3.3.2",
+		"fast-glob": "^3.3.3",
 		"github-slugger": "^2.0.0",
 		"hastscript": "^9.0.0",
 		"he": "^1.2.0",
