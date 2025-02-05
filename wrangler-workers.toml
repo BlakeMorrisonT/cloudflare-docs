@@ -16,6 +16,7 @@ rules = [
 directory = "./dist"
 binding = "ASSETS"
 not_found_handling = "404-page"
+run_worker_first = true
 
 [[kv_namespaces]]
 binding = "API_DOCS_KV"
