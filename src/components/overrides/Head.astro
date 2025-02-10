@@ -68,6 +68,8 @@ if (currentSection) {
 			const group = product.data.product.group.toLowerCase();
 
 			let ogImage = "https://developers.cloudflare.com/cf-twitter-card.png";
+			let changelogImage =
+				"https://developers.cloudflare.com/changelog-preview.png";
 			const images: Record<string, string> = {
 				"cloudflare essentials":
 					"https://developers.cloudflare.com/core-services-preview.png",
@@ -84,6 +86,10 @@ if (currentSection) {
 
 			if (images[group]) {
 				ogImage = images[group];
+			}
+
+			if (currentSection === "changelog") {
+				ogImage = changelogImage;
 			}
 
 			const tags = [
