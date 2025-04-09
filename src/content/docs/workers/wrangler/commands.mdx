@@ -34,6 +34,7 @@ Wrangler offers a number of commands to manage your Cloudflare Workers.
 - [`secret`](#secret) - Manage the secret variables for a Worker.
 - [`secret bulk`](#secret-bulk) - Manage multiple secret variables for a Worker.
 - [`secrets-store secret`](#secrets-store-secret) - Manage account secrets within a secrets store.
+- [`secrets-store store`](#secrets-store-store) - Manage your store within secrets store.
 - [`workflows`](#workflows) - Manage and configure Workflows.
 - [`tail`](#tail) - Start a session to livestream logs from a deployed Worker.
 - [`pages`](#pages) - Configure Cloudflare Pages.
@@ -729,6 +730,81 @@ npx wrangler secret bulk < secrets.json
 Finished processing secrets JSON file:
 ✨ 1 secrets successfully uploaded
 🚨 1 secrets failed to upload
+```
+
+## `secrets-store store`
+
+You can use the following commands to manage your store.
+
+:::note[Store limitation]
+Each account only supports one store in beta.
+:::
+
+### create
+
+Create a store within Secrets Store.
+
+```txt
+wrangler secerets-store store create <name>
+```
+
+- `name` <Type text="string" /> <MetaInfo text="required" />
+  - A descriptive name for the account-level secret. Cannot contain spaces.
+
+The following is an example of using the `create` command to create a store.
+
+```txt
+wrangler secrets-store store create default --remote
+```
+
+```sh output
+🔐 Creating store... (Name: default)
+✅ Created store! (Name: default, ID: 2e2a82d317134506b58defbe16982d54)
+```
+
+### delete 
+
+Delete a store within Secrets Store.
+
+```txt
+wrangler secerets-store store delete <STORE_ID>
+```
+
+- `STORE_ID` <Type text="string" /> <MetaInfo text="required" />
+  - The secret store public ID. You can find it and copy from the [Secrets Store tab](https://dash.cloudflare.com/?to=/:account/secrets-store/) on the dashboard.
+
+The following is an example of using the `delete` command to delete a store.
+
+```sh
+npx wrangler secrets-store store delete d2dafaeac9434de2b6d08b292ce08211
+```
+
+```sh output
+🔐 Deleting store... (Name: d2dafaeac9434de2b6d08b292ce08211)
+✅ Deleted store! (ID: d2dafaeac9434de2b6d08b292ce08211)
+```
+
+### list
+
+List the stores within an account.
+
+```txt
+wrangler secrets-store store list
+```
+
+The following is an example of using the `list` command to list stores.
+
+```sh
+npx wrangler secrets-store store list
+```
+
+```sh output
+🔐 Listing stores...
+┌─────────┬──────────────────────────────────┬──────────────────────────────────┬──────────────────────┬──────────────────────┐
+│ Name    │ ID                               │ AccountID                        │ Created              │ Modified             │
+├─────────┼──────────────────────────────────┼──────────────────────────────────┼──────────────────────┼──────────────────────┤
+│ default │ 8876bad33f164462bf0743fe8adf98f4 │ REDACTED │ 4/9/2025, 1:11:48 PM  │ 4/9/2025, 1:11:48 PM │
+└─────────┴──────────────────────────────────┴──────────────────────────────────┴──────────────────────┴──────────────────────┘
 ```
 
 ## `secrets-store secret`
