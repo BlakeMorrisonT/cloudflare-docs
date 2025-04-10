@@ -8,7 +8,7 @@ sidebar:
 
 import { Render } from "~/components"
 
-In clientless ZTWA deployments, users connect to internal applications via public hostnames. You will need to own a domain, add it to Cloudflare, and configure Cloudflare as the [authoritative DNS provider](/dns/zone-setups/full-setup/setup/#update-your-nameservers) for that domain. Enterprise customers who cannot change their authoritative DNS provider have the option to configure a [partial (`CNAME`) setup](/dns/zone-setups/partial-setup/).
+In clientless access deployments, users connect to internal applications via public hostnames. You will need to own a domain, add it to Cloudflare, and configure Cloudflare as the [authoritative DNS provider](/dns/zone-setups/full-setup/setup/#update-your-nameservers) for that domain. Enterprise customers who cannot change their authoritative DNS provider have the option to configure a [partial (`CNAME`) setup](/dns/zone-setups/partial-setup/).
 
 You only need to add one domain to Cloudflare, since you can create an infinite number of subdomains to manage all of your private applications.
 
@@ -31,4 +31,4 @@ You only need to add one domain to Cloudflare, since you can create an infinite 
 6. <Render file="update-nameservers" product="fundamentals" />
 7. (Optional) Follow the **Quick Start Guide** to configure security and performance settings.
 
-Registrars can take up to 24 hours to process nameserver changes. Your domain must be in an **Active** status before you can use it for Zero Trust Web Access.
+Registrars can take up to 24 hours to process nameserver changes. Your domain must be in an **Active** status before you can use it for clientless access.
