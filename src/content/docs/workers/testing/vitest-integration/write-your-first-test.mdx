@@ -4,7 +4,7 @@ pcx_content_type: concept
 sidebar:
   order: 1
 head: []
-description: Write unit tests against Workers.
+description: Write tests against Workers using Vitest
 ---
 
 import {
@@ -173,7 +173,7 @@ By importing the Worker we can write a unit test for its `fetch` handler.
 
 ### Integration tests
 
-You can use the SELF fetcher provided by the `cloudflare:test` to write an integration test. This is a service binding to the default export defined in the main Worker. The main Worker runs in the same isolate/context as tests so any global mocks will apply to it too.
+You can use the SELF fetcher provided by the `cloudflare:test` to write an integration test. This is a service binding to the default export defined in the main Worker.
 
 <TypeScriptExample filename="test/integration.spec.ts">
 	```ts
@@ -191,6 +191,9 @@ You can use the SELF fetcher provided by the `cloudflare:test` to write an integ
     ```
 
 </TypeScriptExample>
+
+When using `SELF` for integration tests, your Worker code runs in the same context as the test runner. This means you can use global mocks to control your Worker, but also means your Worker uses the subtly different module resolution behavior provided by Vite.
+Usually this is not a problem, but to run your Worker in a fresh environment that is as close to production as possible, you can use an auxiliary Worker. Refer to [this example](https://github.com/cloudflare/workers-sdk/blob/main/fixtures/vitest-pool-workers-examples/basics-integration-auxiliary/vitest.config.ts) for how to set up integration tests using auxiliary Workers. However, using auxiliary Workers comes with [limitations](/workers/testing/vitest-integration/configuration/#workerspooloptions) that you should be aware of.
 
 ## Related resources
 

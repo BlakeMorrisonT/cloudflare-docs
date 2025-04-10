@@ -1540,6 +1540,12 @@
 /workers/tutorials/generate-dynamic-og-images-using-workers/ /workers/tutorials/ 302
 /workers/static-assets/compatibility-matrix/ /workers/static-assets/migrate-from-pages/ 301
 /workers/frameworks/framework-guides/remix/ /workers/frameworks/framework-guides/react-router/ 301
+/workers/testing/unit-testing/ /workers/testing/vitest-integration/write-your-first-test/ 301
+/workers/testing/integration-testing/ /workers/testing/ 301
+/workers/testing/vitest-integration/get-started/ /workers/testing/vitest-integration/write-your-first-test/ 301
+/workers/testing/vitest-integration/get-started/migrate-from-miniflare-2/ /workers/testing/vitest-integration/migration-guides/migrate-from-miniflare-2/ 301
+/workers/testing/vitest-integration/get-started/migrate-from-unstable-dev/ /workers/testing/vitest-integration/migration-guides/migrate-from-unstable-dev/ 301
+/workers/testing/vitest-integration/get-started/write-your-first-test/ /workers/testing/vitest-integration/write-your-first-test/ 301
 
 # workers ai
 /workers-ai/models/llm/ /workers-ai/models/#text-generation 301
