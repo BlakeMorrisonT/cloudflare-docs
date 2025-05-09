@@ -180,7 +180,9 @@ Gateway uses Rust to evaluate regular expressions. The Rust implementation is sl
 
 ### Selector prerequisites
 
-The [Application](#application), [Content Categories](#content-categories), [Domain](#domain), and [Host](#host) selectors are only available for traffic onboarded to Gateway with [WARP](/cloudflare-one/connections/connect-devices/warp/), [PAC files](/cloudflare-one/connections/connect-devices/agentless/pac-files/), or [Browser Isolation](/cloudflare-one/policies/browser-isolation/). To turn on the selectors for your account, use the [Patch Zero Trust account configuration endpoint](/api/resources/zero_trust/subresources/gateway/subresources/configurations/methods/edit/). For example:
+The [Application](#application), [Content Categories](#content-categories), [Domain](#domain), and [Host](#host) selectors are only available for traffic onboarded to Gateway with [WARP](/cloudflare-one/connections/connect-devices/warp/), [PAC files](/cloudflare-one/connections/connect-devices/agentless/pac-files/), or [Browser Isolation](/cloudflare-one/policies/browser-isolation/). These selectors are not compatible with traffic onboarded to Gateway with [WARP Connector](/cloudflare-one/connections/connect-networks/private-net/warp-connector/), [Magic WAN](/magic-wan/zero-trust/cloudflare-gateway/), or [WARP-to-WARP](/cloudflare-one/connections/connect-networks/private-net/warp-to-warp/).
+
+To turn on the selectors for your account, use the [Patch Zero Trust account configuration](/api/resources/zero_trust/subresources/gateway/subresources/configurations/methods/edit/) endpoint. For example:
 
 ```sh title="Turn on selectors for egress policies"
 curl --request PATCH \
