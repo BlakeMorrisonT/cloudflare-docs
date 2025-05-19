@@ -1,12 +1,12 @@
 diff --git a/node_modules/@astrojs/starlight/components/SidebarSublist.astro b/node_modules/@astrojs/starlight/components/SidebarSublist.astro
-index a027f56..7e372d7 100644
+index a027f56..639be81 100644
 --- a/node_modules/@astrojs/starlight/components/SidebarSublist.astro
 +++ b/node_modules/@astrojs/starlight/components/SidebarSublist.astro
 @@ -4,6 +4,7 @@ import type { SidebarEntry } from '../utils/routing/types';
  import Icon from '../user-components/Icon.astro';
  import Badge from '../user-components/Badge.astro';
  import SidebarRestorePoint from './SidebarRestorePoint.astro';
-+import SidebarIcon from "~/components/SidebarIcon.astro"
++import SidebarIcon from "~/components/SidebarIcon.astro";
  
  interface Props {
  	sublist: SidebarEntry[];
@@ -45,15 +45,3 @@ index 6d173df..61eed80 100644
  								{label}
  							</a>
  						</li>
-diff --git a/node_modules/@astrojs/starlight/utils/git.ts b/node_modules/@astrojs/starlight/utils/git.ts
-index 1536fac..94876b1 100644
---- a/node_modules/@astrojs/starlight/utils/git.ts
-+++ b/node_modules/@astrojs/starlight/utils/git.ts
-@@ -72,6 +72,7 @@ export function getAllNewestCommitDate(rootPath: string, docsPath: string): [str
- 		{
- 			cwd: repoRoot,
- 			encoding: 'utf-8',
-+			maxBuffer: 10 * 1024 * 1024,
- 		}
- 	);
- 
