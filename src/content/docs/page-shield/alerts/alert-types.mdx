@@ -1,29 +1,39 @@
 ---
-title: Page Shield alerts
+title: Alert types
 pcx_content_type: reference
 sidebar:
   order: 3
-  label: Alerts
+  label: Alert types
 ---
 
 import { AvailableNotifications } from "~/components";
 
-You can configure alerts for resources detected in your domain. Refer to [Configure Page Shield alerts](/page-shield/detection/configure-alerts/) for instructions.
+You can configure alerts for resources detected in your domain. Refer to [Page Shield alerts](/page-shield/alerts/) for more information.
 
 ## New resource alerts
+
+:::note
+Requires a Business plan or higher.
+:::
 
 <AvailableNotifications
 	product="Page Shield"
 	notificationFilter="Page Shield New Resources Alert"
-/> <AvailableNotifications
+/>
+<AvailableNotifications
 	product="Page Shield"
 	notificationFilter="Page Shield New Domain Alert"
-/> <AvailableNotifications
+/>
+<AvailableNotifications
 	product="Page Shield"
 	notificationFilter="Page Shield New Resource Exceeds Max URL Length Alert"
 />
 
 ## Code change alert
+
+:::note
+Requires an Enterprise plan with a paid add-on.
+:::
 
 <AvailableNotifications
 	product="Page Shield"
@@ -32,13 +42,19 @@ You can configure alerts for resources detected in your domain. Refer to [Config
 
 ## Malicious resource alerts
 
+:::note
+Requires an Enterprise plan with a paid add-on.
+:::
+
 <AvailableNotifications
 	product="Page Shield"
 	notificationFilter="Page Shield New Malicious Domain Alert"
-/> <AvailableNotifications
+/>
+<AvailableNotifications
 	product="Page Shield"
 	notificationFilter="Page Shield New Malicious URL Alert"
-/> <AvailableNotifications
+/>
+<AvailableNotifications
 	product="Page Shield"
 	notificationFilter="Page Shield New Malicious Script Alert"
 />
