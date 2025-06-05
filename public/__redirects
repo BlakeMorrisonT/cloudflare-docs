@@ -1716,7 +1716,25 @@
 /workers/static-assets/migrate-from-pages/ /workers/static-assets/migration-guides/migrate-from-pages/ 301
 /workers/static-assets/compatibility-matrix/ /workers/static-assets/migration-guides/migrate-from-pages/ 301
 /workers/static-assets/migrations/vercel-to-workers/ /workers/static-assets/migration-guides/vercel-to-workers/ 301
-/workers/frameworks/framework-guides/remix/ /workers/frameworks/framework-guides/react-router/ 301
+/workers/frameworks/framework-guides/remix/ /workers/framework-guides/web-apps/react-router/ 301
+/workers/frameworks/ /workers/framework-guides/ 301
+/workers/frameworks/framework-guides/ /workers/framework-guides/ 301
+/workers/frameworks/framework-guides/astro/ /workers/framework-guides/web-apps/astro/ 301
+/workers/frameworks/framework-guides/nextjs/ /workers/framework-guides/web-apps/nextjs/ 301
+/workers/frameworks/framework-guides/react-router/ /workers/framework-guides/web-apps/react-router/ 301
+/workers/frameworks/framework-guides/react/ /workers/framework-guides/web-apps/react/ 301
+/workers/frameworks/framework-guides/redwoodsdk/ /workers/framework-guides/web-apps/redwoodsdk/ 301
+/workers/frameworks/framework-guides/svelte/ /workers/framework-guides/web-apps/svelte/ 301
+/workers/frameworks/framework-guides/tanstack/ /workers/framework-guides/web-apps/tanstack/ 301
+/workers/frameworks/framework-guides/vue/ /workers/framework-guides/web-apps/vue/ 301
+/workers/frameworks/framework-guides/angular/ /workers/framework-guides/web-apps/more-web-frameworks/angular/ 301
+/workers/frameworks/framework-guides/docusaurus/ /workers/framework-guides/web-apps/more-web-frameworks/docusaurus/ 301
+/workers/frameworks/framework-guides/gatsby/ /workers/framework-guides/web-apps/more-web-frameworks/gatsby/ 301
+/workers/frameworks/framework-guides/hono/ /workers/framework-guides/web-apps/more-web-frameworks/hono/ 301
+/workers/frameworks/framework-guides/nuxt/ /workers/framework-guides/web-apps/more-web-frameworks/nuxt/ 301
+/workers/frameworks/framework-guides/qwik/ /workers/framework-guides/web-apps/more-web-frameworks/qwik/ 301
+/workers/frameworks/framework-guides/solid/ /workers/framework-guides/web-apps/more-web-frameworks/solid/ 301
+
 /workers/testing/unit-testing/ /workers/testing/vitest-integration/write-your-first-test/ 301
 /workers/testing/integration-testing/ /workers/testing/ 301
 /workers/testing/vitest-integration/get-started/ /workers/testing/vitest-integration/write-your-first-test/ 301
