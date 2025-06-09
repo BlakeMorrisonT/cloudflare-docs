@@ -98,8 +98,8 @@ bun add --dev wrangler@^4.0.0
 
 Then replace Pages commands with Workers equivalents:
 
-- `wrangler pages deploy` â†’ `wrangler deploy`
-- `wrangler pages dev` â†’ `wrangler dev`
+- `wrangler pages deploy` to `wrangler deploy`
+- `wrangler pages dev` to `wrangler dev`
 
 Keep framework-specific commands unchanged (e.g., `astro dev`, `next dev`).
 
