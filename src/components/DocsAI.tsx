@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import { fetchEventSource } from "@microsoft/fetch-event-source";
 import { Ring } from "ldrs/react";
 import { MdOutlineThumbUp, MdOutlineThumbDown } from "react-icons/md";
+import { track } from "~/util/zaraz";
 import "ldrs/react/Ring.css";
 
 type Messages = {
@@ -31,6 +32,29 @@ async function sendCSATFeedback(queryId: string, positive: boolean) {
 	}
 }
 
+function TrackedLink({
+	href,
+	children,
+}: {
+	href?: string;
+	children?: React.ReactNode;
+}) {
+	return (
+		<a
+			href={href}
+			target="_blank"
+			onClick={() =>
+				track("click chat link", {
+					value: children?.toString() ?? "",
+					href,
+				})
+			}
+		>
+			{children}
+		</a>
+	);
+}
+
 function Messages({
 	messages,
 	loading,
@@ -47,6 +71,9 @@ function Messages({
 	};
 
 	const handleFeedback = async (queryId: string, positive: boolean) => {
+		track("submit chat feedback", {
+			value: positive.toString(),
+		});
 		await sendCSATFeedback(queryId, positive);
 		setFeedbackGiven((prev) => new Set(prev).add(queryId));
 	};
@@ -60,7 +87,12 @@ function Messages({
 						<div
 							className={`${classes.base} ${message.role === "user" ? classes.user : classes.assistant}`}
 						>
-							<Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>
+							<Markdown
+								remarkPlugins={[remarkGfm, remarkBreaks]}
+								components={{
+									a: TrackedLink,
+								}}
+							>
 								{message.content}
 							</Markdown>
 							{message.sources && (
@@ -71,10 +103,10 @@ function Messages({
 									</p>
 									<ul>
 										{message.sources.map((source) => (
-											<li>
-												<a href={source.file_path} target="_blank">
+											<li key={source.file_path}>
+												<TrackedLink href={source.file_path}>
 													{source.title}
-												</a>
+												</TrackedLink>
 											</li>
 										))}
 									</ul>
@@ -124,6 +156,10 @@ export default function SupportAI() {
 	const [messages, setMessages] = useState<Messages>([]);
 
 	async function handleSubmit() {
+		track("submit chat", {
+			value: question,
+		});
+
 		setLoading(true);
 		setMessages((messages) => [
 			...messages,
