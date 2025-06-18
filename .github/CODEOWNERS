@@ -90,6 +90,7 @@
 /src/content/docs/registrar/ @dcpena @cloudflare/pcx-technical-writing
 /src/content/docs/rules/ @pedrosousa @cloudflare/pcx-technical-writing
 /src/content/docs/ruleset-engine/ @pedrosousa @cloudflare/pcx-technical-writing
+/src/content/docs/log-explorer/ @angelampcosta @cloudflare/pcx-technical-writing
 
 # Developer Platform
 
