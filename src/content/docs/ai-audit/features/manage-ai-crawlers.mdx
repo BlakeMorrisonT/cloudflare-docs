@@ -1,0 +1,59 @@
+---
+title: Manage AI crawlers
+pcx_content_type: concept
+sidebar:
+  order: 2
+---
+
+import { Steps, GlossaryTooltip, Tabs, TabItem } from "~/components";
+
+AI Audit enables you to take specific action for each AI crawler.
+
+To manage AI crawlers:
+
+1. Log in to the [Cloudflare dashboard](https://dash.cloudflare.com/), and select your account and domain.
+2. Go to **AI Audit**.
+3. Go to the **AI Crawlers** tab.
+
+## View the list of AI crawlers
+
+The **AI Crawlers** tab displays a table of AI crawlers that are requesting access to your content, and how they interact with your pages. The table provides the following information, depending on the type of plan you are on.
+
+<Tabs syncKey ="plan">
+<TabItem label="Free plan">
+| Column                | Details                                                                                                                                                             |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| AI Crawlers           | The name of the AI crawler.                                                                                                                                         |
+| Operator              | The name of the entity who owns the AI crawler. Note that an operator may have multiple AI crawlers.                                                                |
+| Category              | The category of the AI crawler. Refer to [Verified bot categories](/bots/concepts/bot/verified-bots/categories/).                                                   |
+| Block                 | Toggle for blocking specific AI crawlers.                                                                                                                           |
+
+</TabItem> <TabItem label="Paid plan">
+
+| Column                | Details                                                                                                                                                             |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| AI Crawlers           | The name of the AI crawler.                                                                                                                                         |
+| Operator              | The name of the entity who owns the AI crawler. Note that an operator may have multiple AI crawlers.                                                                |
+| Category              | The category of the AI crawler. Refer to [Verified bot categories](/bots/concepts/bot/verified-bots/categories/).                                                   |
+| Requests              | The number of times the AI crawler has requested to crawl your content.                                                                                             |
+| Robots.txt violations | The number of times the AI crawler has violated your <GlossaryTooltip term="robots.txt">`robots.txt`</GlossaryTooltip> file.                                        |
+| Block                 | Toggle for blocking specific AI crawlers.                                                                                                                           |
+
+</TabItem>
+</Tabs>
+
+## Block access
+
+You can block an AI crawler to completely stop the AI crawler from scraping your webpage.
+
+Use the toggles in the **Block** column to block specific AI crawlers from accessing your content.
+
+## Filter AI crawler data
+
+You can use filters to narrow the scope of your result.
+
+- **Name:** Search the name of the AI crawler.
+- **Operator:** Filter by the AI crawler operator.
+- **Category:** Filter by the category of the AI crawler (for example, AI crawler, AI assistant, or archiver).
+
+The values of the table will update according to your filter.

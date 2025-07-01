@@ -1,0 +1,8 @@
+---
+productName: AI Audit
+entries:
+  - term: robots.txt
+    general_definition: |-
+      A text file which lists pages in your website that are off-limits for bots. Well-behaved bots respect this file, but some bots may violate it. You can [enforce robots.txt](/ai-audit/features/enforce-robots-txt/) with Cloudflare WAF custom rules.
+
+
