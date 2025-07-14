@@ -1,8 +1,8 @@
 ---
 import { z } from "astro:schema";
 import { getComponentsUsage } from "~/util/components";
-import { slug } from "github-slugger";
 
+import UsageList from "./UsageList.astro";
 import Details from "./Details.astro";
 
 type Props = z.infer<typeof props>;
@@ -22,70 +22,6 @@ const usage = await getComponentsUsage(component);
 		<code>{usage.pages.size}</code> pages.
 	</p>
 	<Details header={`Pages which use ${component}`}>
-		<p><strong>Pages</strong></p>
-		<ul>
-			{
-				[...usage.pages]
-					.filter((path) => path.startsWith("src/content/docs/"))
-					.sort()
-					.map((path) => {
-						const slugified =
-							"/" +
-							path
-								.replace("src/content/docs/", "")
-								.replace(".mdx", "")
-								.split("/")
-								.map((segment) => slug(segment))
-								.join("/") +
-							"/";
-
-						return (
-							<li>
-								<a
-									href={"https://developers.cloudflare.com" + slugified}
-									target="_blank"
-								>
-									{slugified}
-								</a>
-								<span>
-									-
-									<a
-										href={
-											"https://github.com/cloudflare/cloudflare-docs/blob/production/" +
-											path
-										}
-										target="_blank"
-									>
-										Source
-									</a>
-								</span>
-							</li>
-						);
-					})
-			}
-		</ul>
-		<p><strong>Partials</strong></p>
-		<ul>
-			{
-				[...usage.pages]
-					.filter((path) => path.startsWith("src/content/partials/"))
-					.sort()
-					.map((path) => {
-						return (
-							<li>
-								<a
-									href={
-										"https://github.com/cloudflare/cloudflare-docs/blob/production/" +
-										path
-									}
-									target="_blank"
-								>
-									{path}
-								</a>
-							</li>
-						);
-					})
-			}
-		</ul>
+		<UsageList usage={usage} />
 	</Details>
 </>
