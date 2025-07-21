@@ -20,7 +20,7 @@ To resolve: Pass your Browser binding into `puppeteer.launch`.
 
 ### Will Browser Rendering bypass Cloudflare's Bot Protection?
 
-No, Browser Rendering requests are always identified as bots by Cloudflare and do not bypass Bot Protection. 
+No, Browser Rendering requests are always identified as bots by Cloudflare and do not bypass Bot Protection.
 
 If you are attempting to scan your **own zone** and need Browser Rendering to access areas protected by Cloudflare’s Bot Protection, you can create a [WAF skip rule](/waf/custom-rules/skip/) to bypass the bot protection using a header or a custom user agent.
 
@@ -50,6 +50,12 @@ Keep in mind that `page.evaluate` can only return primitive types like strings, 
 Returning an `HTMLElement` will not work.
 
 :::
+
+### What are the usage limits for Browser Rendering and how do I estimate my costs?
+
+You can view the complete breakdown of concurrency caps, request rates, timeouts, and REST API quotas on the [limits page](/browser-rendering/platform/limits/).
+
+You can monitor your Browser Rendering usage in the [Cloudflare dashboard](https://dash.cloudflare.com). Go to **Compute (Workers)** > **Browser Rendering**. Then, you can use [the pricing page](/browser-rendering/platform/pricing/) to estimate your costs.
 
 ### Does Browser Rendering rotate IP addresses for outbound requests?
 
