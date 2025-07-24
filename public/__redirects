@@ -1171,6 +1171,7 @@
 /queues/reference/consumer-concurrency/ /queues/configuration/consumer-concurrency/ 301
 /queues/reference/local-development/ /queues/configuration/local-development/ 301
 /queues/reference/metrics/ /queues/observability/metrics/ 301
+/queues/examples/publish-to-a-queue-over-http/ /queues/examples/publish-to-a-queue-via-http/ 301
 
 
 # reference architectures & design guides
