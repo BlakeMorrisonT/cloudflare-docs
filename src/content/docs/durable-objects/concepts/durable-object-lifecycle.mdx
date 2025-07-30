@@ -1,0 +1,77 @@
+---
+title: Lifecycle of a Durable Object
+pcx_content_type: concept
+sidebar:
+  order: 3
+
+---
+
+import { Render, TypeScriptExample } from "~/components";
+
+This section describes the lifecycle of a [Durable Object](/durable-objects/concepts/what-are-durable-objects/).
+
+To use a Durable Object you need to create a [Durable Object Stub](/durable-objects/api/stub/). In its simplest form, this looks like the following snippet:
+
+```ts
+// Assume a DurableObjectNamespace binding MY_DURABLE_OBJECT
+// Every unique ID refers to an individual instance of the Durable Object class
+const id = env.MY_DURABLE_OBJECT.idFromName("foo");
+const stub = env.MY_DURABLE_OBJECT.get(id);
+```
+
+Once we have the Durable Object Stub, we can now invoke methods on the Durable Object. Note that the above two lines do not yet send any request to the remote Durable Object.
+
+The following line invokes the `sayHello()` method (which is an [RPC method](/durable-objects/best-practices/create-durable-object-stubs-and-send-requests/#invoke-rpc-methods)) of the Durable Object class bound to the `MY_DURABLE_OBJECT` binding:
+
+```ts
+// All invoked methods need to be awaited.
+const rpcResponse = await stub.sayHello();
+```
+
+At this point, the caller sends a request to the Durable Object identified by the stub. The lifecycle of the Durable Object begins.
+
+## Durable Object Lifecycle state transitions
+
+A Durable Object can be in one of the following states at any moment:
+
+| State                                | Description                                                                                                                                                                                                                                           |
+|--------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Active, in-memory**                | The Durable Object runs, in memory, and handles incoming requests.                                                                                                                                                                                    |
+| **Idle, in-memory non-hibernateable** | The Durable Object waits for the next incoming request/event, but does not satisfy the criteria for hibernation.                                                                                                                                      |
+| **Idle, in-memory hibernateable**    | The Durable Object waits for the next incoming request/event and satisfies the criteria for hibernation. It is up to the runtime to decide when to hibernate the Durable Object. Currently, it is after 10 seconds of inactivity while in this state. |
+| **Hibernated**                       | The Durable Object is removed from memory. Hibernated WebSocket connections stay connected.                                                                                                                                                                                                          |
+| **Inactive**                         | The Durable Object is completely removed from the host process and might need to cold start. This is the initial state of all Durable Objects.                                                                                                                                                              |
+
+This is how a Durable Object transitions among these states (each state is in a rounded rectangle).
+
+![Lifecycle of a Durable Object](~/assets/images/durable-objects/lifecycle-of-a-do.png)
+
+Assuming a Durable Object does not run, the first incoming request or event (like an alarm) will execute the `constructor()` of the Durable Object class, then run the corresponding function invoked.
+
+At this point the Durable Object is in the **active in-memory state**.
+
+If it continuously receives requests or events within 10 seconds of each other, the Durable Object will remain in this state.
+
+After 10 seconds of no incoming request or events, the runtime can now hibernate the Durable Object. Hibernation will only occur if **all** of the below are true:
+  - No `setTimeout`/`setInterval` scheduled callbacks are set.
+  - No in-progress `fetch()` waiting for a remote request exists.
+  - No WebSocket standard API is used.
+  - No request/event is still being processed.
+
+If all conditions are met, the Durable Object will transition into a **hibernated** state.
+
+:::caution
+When hibernated, the in-memory state is discarded, so ensure you persist all important information in the Durable Object's storage.
+:::
+
+If any of the above conditions are false, the Durable Object remains in-memory, in the **idle, in-memory, non-hibernateable** state.
+
+In case of an incoming request or event while in the **hibernated** state, the `constructor()` will run again, and the corresponding function invoked will run.
+
+While in the **idle, in-memory, non-hibernateable** state, after 70-140 seconds of inactivity (no incoming requests or events), the Durable Object will be evicted entirely from memory and potentially from the Cloudflare host and transition to the **inactive** state.
+
+Objects in the **hibernated** state keep their Websocket clients connected, and the runtime decides if and when to move the object to a different host, thus restarting the lifecycle.
+
+The next incoming request or event starts the cycle again.
+
+As explained in [When does a Durable Object incur duration charges?](/durable-objects/platform/pricing/#when-does-a-durable-object-incur-duration-charges), a Durable Object incurs charges only when it is **actively running in-memory**, or when it is **idle in-memory and non-hibernateable**, the two states highlighted in red in the above diagram.
