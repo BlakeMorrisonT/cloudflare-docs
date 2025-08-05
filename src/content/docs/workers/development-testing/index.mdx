@@ -105,14 +105,14 @@ If you're using [Wrangler](/workers/wrangler/) for local development and have re
 
 If you're using Vite via [the Cloudflare Vite plugin](/workers/vite-plugin/), you'll need to add support for remote bindings in your Vite configuration (`vite.config.ts`):
 
-```ts title="vite.config.ts" {10}
+```ts title="vite.config.ts" {8}
 import { cloudflare } from "@cloudflare/vite-plugin";
 import { defineConfig } from "vite";
 
 export default defineConfig({
 	plugins: [
 		cloudflare({
-			configPath: "./entry-worker/wrangler.jsonc",
+			configPath: "wrangler.jsonc",
 			experimental: { remoteBindings: true },
 		}),
 	],
