@@ -14,6 +14,10 @@ import { DirectoryListing } from "~/components"
 You can use WebAssembly to:
 
 * Execute code written in a language other than JavaScript, via `WebAssembly.instantiate()`.
+	:::note
+		`WebAssembly.instantiate()` only supports pre-compiled modules as documented in the [web-standards documentation](/workers/runtime-apis/web-standards/#javascript-standards).
+	:::
+
 * Write an entire Cloudflare Worker in Rust, using bindings that make Workers' JavaScript APIs available directly from your Rust code.
 
 Most programming languages can be compiled to Wasm, although support varies across languages and compilers. Guides are available for the following languages:
