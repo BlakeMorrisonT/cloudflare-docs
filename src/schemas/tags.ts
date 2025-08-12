@@ -24,6 +24,7 @@ const frameworks: Array<Tag> = [
 	{ label: "Svelte" },
 	{ label: "SvelteKit" },
 	{ label: "Vue.js", variants: ["vue", "vuejs"] },
+	{ label: ".NET" },
 ];
 
 const integrations: Array<Tag> = [
@@ -51,6 +52,7 @@ const integrations: Array<Tag> = [
 const languages: Array<Tag> = [
 	{ label: "Go" },
 	{ label: "GraphQL" },
+	{ label: "Java" },
 	{ label: "JavaScript", variants: ["js"] },
 	{ label: "MySQL" },
 	{ label: "NoSQL" },
@@ -120,6 +122,7 @@ const use_cases: Array<Tag> = [
 	{ label: "Logging" },
 	{ label: "Middleware" },
 	{ label: "Playback" },
+	{ label: "Prisma ORM" },
 	{ label: "Privacy" },
 	{ label: "Redirects", variants: ["redirect"] },
 	{ label: "Request modification", variants: ["request"] },
