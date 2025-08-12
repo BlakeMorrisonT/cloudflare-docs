@@ -247,6 +247,10 @@ All plans have access to:
 
   * HTTP Protocol, for example, `"HTTP/2"`.
 
+* `hostMetadata` Object | undefined
+
+  * Only populated when the incoming request is from a zone with custom hostname metadata. Refer to the Cloudflare for Platforms documentation for more about what you can add as [custom hostname metadata](/cloudflare-for-platforms/cloudflare-for-saas/domain-support/custom-metadata/), and how it is exposed on the `hostMetadata` field.
+
 * `requestPriority` string | null
 
   * The browser-requested prioritization information in the request object, for example, `"weight=192;exclusive=0;group=3;group-weight=127"`.
