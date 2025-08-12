@@ -10,7 +10,7 @@ head:
     content: Resolver policies
 ---
 
-import { Render, Badge } from "~/components";
+import { Render, Badge, GlossaryTooltip } from "~/components";
 
 :::note
 Only available on Enterprise plans.
@@ -51,6 +51,8 @@ To get started with resolving internal DNS queries with resolver policies, refer
 ### Local Domain Fallback
 
 If your resolver is only reachable by a client device and not by Gateway via a Cloudflare tunnel, Magic WAN tunnel, or other public Internet connections, you should configure [Local Domain Fallback](/cloudflare-one/connections/connect-devices/warp/configure-warp/route-traffic/local-domains/) for your device. If both Local Domain Fallback and resolver policies are configured for the same device, Cloudflare will apply your client-side Local Domain Fallback rules first. If you onboard DNS queries to Gateway with the WARP client and route them with resolver policies, the source IP of the queries will be the IP address assigned by the WARP client.
+
+<Render file="warp/ldf-best-practice" product="cloudflare-one" />
 
 ## Resolver connections
 
