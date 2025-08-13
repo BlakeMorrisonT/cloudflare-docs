@@ -1549,6 +1549,16 @@
 /turnstile/concepts/widget-types/ /turnstile/concepts/widget/ 301
 /turnstile/concepts/domain-management/ /turnstile/concepts/hostname-management/ 301
 /turnstile/troubleshooting/challenge-solve-issues/ /cloudflare-challenges/troubleshooting/challenge-solve-issues/ 301
+/turnstile/concepts/ephemeral-id/ /turnstile/additional-configuration/ephemeral-id/ 301
+/turnstile/concepts/hostname-management/ /turnstile/additional-configuration/hostname-management/ 301
+/turnstile/concepts/pre-clearance-support/ /cloudflare-challenges/concepts/clearance/ 301
+/turnstile/api-reference/ /turnstile/get-started/widget-management/api/ 301
+/turnstile/concepts/appearance-modes/ /turnstile/get-started/client-side-rendering/widget-configurations/ 301
+/turnstile/demos/ /turnstile/tutorials/ 301
+/turnstile/get-started/pre-clearance/ /cloudflare-challenges/concepts/clearance/ 301
+/turnstile/get-started/terraform/ /turnstile/get-started/widget-management/terraform/ 301
+/turnstile/glossary/ /turnstile/ 301
+/turnstile/get-started/supported-browsers/ /cloudflare-challenges/reference/supported-browsers/ 301
 
 # waf
 /waf/about/ /waf/concepts/ 301
