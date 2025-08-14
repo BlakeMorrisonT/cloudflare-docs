@@ -231,6 +231,7 @@ export default function InstantSearchComponent() {
 				<div className="not-content flex gap-2">
 					<FilterDropdown attribute="product" label="Products" />
 					<FilterDropdown attribute="tags" label="Tags" />
+					<FilterDropdown attribute="contentType" label="Page type" />
 				</div>
 				<InfiniteHits />
 			</div>
