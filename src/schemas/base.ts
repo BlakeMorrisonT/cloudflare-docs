@@ -74,7 +74,7 @@ export const baseSchema = ({ image }: SchemaContext) =>
 			.describe(
 				"Difficulty is displayed as a column in the [ListTutorials component](/style-guide/components/list-tutorials/).",
 			),
-		updated: z
+		reviewed: z
 			.date()
 			.optional()
 			.describe(
