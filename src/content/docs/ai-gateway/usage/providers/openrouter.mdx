@@ -29,7 +29,7 @@ When making requests to OpenRouter, ensure you have the following:
 ### cURL
 
 ```bash title="Request"
-curl -X POST https://gateway.ai.cloudflare.com/v1/ACCOUNT_TAG/GATEWAY/openrouter/v1/chat/completions \
+curl -X POST https://gateway.ai.cloudflare.com/v1/{account_id}/{gateway_id}/openrouter/v1/chat/completions \
  --header 'content-type: application/json' \
  --header 'Authorization: Bearer OPENROUTER_TOKEN' \
  --data '{
