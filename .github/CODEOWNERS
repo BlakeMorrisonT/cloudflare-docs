@@ -163,6 +163,11 @@
 
 /src/content/docs/migration-guides/ @kimj15 @cloudflare/pcx-technical-writing
 
+# MoQ
+
+/src/content/docs/moq/ @englishm @renandincer @cloudflare/pcx-technical-writing
+/src/content/products/moq.yml @englishm @renandincer @cloudflare/pcx-technical-writing
+
 # Performance products
 
 /src/content/docs/argo-smart-routing/ @dcpena @cloudflare/pcx-technical-writing
