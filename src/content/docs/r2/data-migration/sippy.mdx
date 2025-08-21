@@ -246,14 +246,17 @@ To create credentials with the correct permissions:
 
 ```json
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Effect": "Allow",
-			"Action": ["s3:GetObject"],
-			"Resource": ["arn:aws:s3:::<BucketName>/*"]
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["s3:ListBucket*", "s3:GetObject*"],
+      "Resource": [
+        "arn:aws:s3:::<BUCKET_NAME>",
+        "arn:aws:s3:::<BUCKET_NAME>/*"
+      ]
+    }
+  ]
 }
 ```
 
