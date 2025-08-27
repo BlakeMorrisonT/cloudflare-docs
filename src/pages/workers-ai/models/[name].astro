@@ -29,6 +29,8 @@ import BgeRerankerBase from "~/components/models/code/Bge-Reranker-Base.astro";
 
 import { authorData } from "~/components/models/data";
 import OpenAIResponsesTextGenerationCode from "~/components/models/code/OpenAIResponsesTextGenerationCode.astro";
+import DeepgramAura from "~/components/models/code/DeepgramAura.astro";
+import DeepgramNova from "~/components/models/code/DeepgramNova.astro";
 
 export const getStaticPaths = (async () => {
 	const models = await getCollection("workers-ai-models");
@@ -114,6 +116,14 @@ if (
 	model.name === "@cf/openai/gpt-oss-20b"
 ) {
 	CodeExamples = OpenAIResponsesTextGenerationCode;
+}
+
+if (model.name === "@cf/deepgram/aura-1") {
+	CodeExamples = DeepgramAura;
+}
+
+if (model.name === "@cf/deepgram/nova-3") {
+	CodeExamples = DeepgramNova;
 }
 
 const description = model.description;
