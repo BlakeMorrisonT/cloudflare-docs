@@ -149,9 +149,9 @@
 /ai/ /use-cases/ai/ 301
 
 # ai-audit
-/ai-audit/features/detect-ai-crawlers/ /ai-audit/features/analyze-ai-crawlers/ 301
-/ai-audit/features/enforce-robots-txt/ /ai-audit/features/analyze-ai-crawlers/ 301
-/ai-audit/features/analyze-ai-crawlers/ /ai-audit/features/analyze-ai-traffic/ 301
+/ai-audit/features/detect-ai-crawlers/ /ai-crawl-control/features/analyze-ai-crawlers/ 301
+/ai-audit/features/enforce-robots-txt/ /ai-crawl-control/features/analyze-ai-crawlers/ 301
+/ai-audit/features/analyze-ai-crawlers/ /ai-crawl-control/features/analyze-ai-traffic/ 301
 
 # AI Gateway
 /ai-gateway/get-started/configuring-settings/ /ai-gateway/get-started/ 301
@@ -2271,6 +2271,9 @@
 /fundamentals/setup/manage-members/* /fundamentals/manage-members/:splat 301
 /logs/get-started/enable-destinations/* /logs/logpush/logpush-job/enable-destinations/:splat 301
 /logs/reference/log-fields/* /logs/logpush/logpush-job/datasets/:splat 301
+
+# AI Crawl Control
+/ai-audit/* /ai-crawl-control/:splat 301
 
 # Cloudflare One / Zero Trust
 /cloudflare-one/connections/connect-networks/install-and-setup/tunnel-guide/local/as-a-service/* /cloudflare-one/connections/connect-networks/configure-tunnels/local-management/as-a-service/:splat 301
