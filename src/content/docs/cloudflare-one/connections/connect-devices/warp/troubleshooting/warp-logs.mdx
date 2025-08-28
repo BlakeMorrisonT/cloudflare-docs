@@ -6,7 +6,7 @@ sidebar:
   label: Diagnostic logs
 ---
 
-import { TabItem, Tabs, Stream } from "~/components";
+import { TabItem, Tabs, Render, Stream } from "~/components";
 
 The WARP client provides diagnostic logs that you can use to troubleshoot connectivity issues on a device.
 
@@ -29,9 +29,9 @@ The WARP client provides diagnostic logs that you can use to troubleshoot connec
 
 ## macOS/Windows/Linux
 
-### Retrieve logs
+### Collect logs via the CLI
 
-To view WARP logs on desktop devices:
+To collect WARP diagnostic logs on your desktop:
 
 <Tabs> <TabItem label="macOS">
 
@@ -65,9 +65,21 @@ This will place a `warp-debugging-info-<date>-<time>.zip` in the same folder you
 
 </TabItem> </Tabs>
 
-:::note
-You can also use Digital Experience Monitoring to run `warp-diag` commands on remote devices. For more information, refer to [Remote captures](/cloudflare-one/insights/dex/remote-captures/).
-:::
+### Collect logs via the dashboard
+
+<Render file="dex/pcaps-run-availability" product="cloudflare-one" />
+
+You can collect WARP diagnostic logs remotely from the Zero Trust dashboard by using Digital Experience Monitoring (DEX) [remote captures](/cloudflare-one/insights/dex/remote-captures/).
+
+<Render file="dex/pcaps-run" product="cloudflare-one" />
+
+#### Download remote captures
+
+<Render file="dex/pcaps-download" product="cloudflare-one" />
+
+#### View WARP diagnostics summary (beta)
+
+<Render file="dex/pcaps-view-warp-diag" product="cloudflare-one" />
 
 ### `warp-diag` logs
 
@@ -172,7 +184,7 @@ Always check the timestamps at the end of each log file to verify the time range
 
 ## iOS/Android/ChromeOS
 
-### Retrieve logs
+### Collect logs
 
 To view WARP logs on mobile devices:
 
