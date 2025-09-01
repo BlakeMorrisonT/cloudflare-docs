@@ -169,13 +169,10 @@ export class MyDurableObject extends DurableObject<Env> {
 from workers import DurableObject
 
 class MyDurableObject(DurableObject):
-    def __init__(self, ctx, env):
-        super().__init__(ctx, env)
-
     async def say_hello(self):
-        result = self.ctx.storage.sql \
-            .exec("SELECT 'Hello, World!' as greeting") \
-            .one()
+        result = self.ctx.storage.sql.exec(
+            "SELECT 'Hello, World!' as greeting"
+        ).one()
 
         return result.greeting
 ```
@@ -355,13 +352,10 @@ from workers import DurableObject, handler, Response
 from urllib.parse import urlparse
 
 class MyDurableObject(DurableObject):
-    def __init__(self, ctx, env):
-        super().__init__(ctx, env)
-
     async def say_hello(self):
-        result = self.ctx.storage.sql \
-            .exec("SELECT 'Hello, World!' as greeting") \
-            .one()
+        result = self.ctx.storage.sql.exec(
+            "SELECT 'Hello, World!' as greeting"
+        ).one()
 
         return result.greeting
 
