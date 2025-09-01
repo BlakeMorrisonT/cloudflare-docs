@@ -6,7 +6,7 @@ sidebar:
   label: Diagnostic logs
 ---
 
-import { TabItem, Tabs, Render, Stream } from "~/components";
+import { Render, Stream, TabItem, Tabs } from "~/components";
 
 The WARP client provides diagnostic logs that you can use to troubleshoot connectivity issues on a device.
 
@@ -31,39 +31,7 @@ The WARP client provides diagnostic logs that you can use to troubleshoot connec
 
 ### Collect logs via the CLI
 
-To collect WARP diagnostic logs on your desktop:
-
-<Tabs> <TabItem label="macOS">
-
-1. Open a Terminal window.
-2. Run the `warp-diag` tool:
-   ```sh
-   warp-diag
-   ```
-
-This will place a `warp-debugging-info-<date>-<time>.zip` on your desktop.
-
-</TabItem> <TabItem label="Windows">
-
-1. Open a Command Prompt or PowerShell window.
-2. Run the `warp-diag` tool:
-   ```bash
-   C:\Users\JohnDoe>warp-diag
-   ```
-
-This will place a `warp-debugging-info-<date>-<time>.zip` on your desktop.
-
-</TabItem> <TabItem label="Linux">
-
-1. Open a Terminal window.
-2. Run the `warp-diag` tool:
-   ```sh
-   warp-diag
-   ```
-
-This will place a `warp-debugging-info-<date>-<time>.zip` in the same folder you ran the command from.
-
-</TabItem> </Tabs>
+<Render file="warp/warpdiag-run" product="cloudflare-one" />
 
 ### Collect logs via the dashboard
 
