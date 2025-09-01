@@ -158,8 +158,8 @@ curl https://api.cloudflare.com/client/v4/accounts/<account_id>/workers/scripts/
 from workers import WorkerEntrypoint, Response
 
 class Default(WorkerEntrypoint):
-    async def fetch(self, request, env):
-        return Response(env.MESSAGE)
+    async def fetch(self, request):
+        return Response(self.env.MESSAGE)
 EOF
 ```
 

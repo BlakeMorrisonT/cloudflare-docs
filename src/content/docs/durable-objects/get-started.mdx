@@ -225,9 +225,9 @@ from workers import handler, Response, WorkerEntrypoint
 from urllib.parse import urlparse
 
 class Default(WorkerEntrypoint):
-    async def fetch(request, env, ctx):
+    async def fetch(request):
         url = urlparse(request.url)
-        stub = env.MY_DURABLE_OBJECT.getByName(url.path)
+        stub = self.env.MY_DURABLE_OBJECT.getByName(url.path)
         greeting = await stub.say_hello()
         return Response(greeting)
 ```
@@ -360,9 +360,9 @@ class MyDurableObject(DurableObject):
         return result.greeting
 
 class Default(WorkerEntrypoint):
-    async def fetch(self, request, env, ctx):
+    async def fetch(self, request):
         url = urlparse(request.url)
-        stub = env.MY_DURABLE_OBJECT.getByName(url.path)
+        stub = self.env.MY_DURABLE_OBJECT.getByName(url.path)
         greeting = await stub.say_hello()
         return Response(greeting)
 ```
