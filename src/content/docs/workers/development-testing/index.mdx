@@ -364,7 +364,9 @@ This type conversion is temporary. In the future, the types will be unified so y
 
 This wrapper simplifies proxy session management. It takes:
 
-- The path to your Wrangler config, or an object with remote bindings.
+- An object that contains either:
+  - the path to a Wrangler configuration and a potential target environment
+  - the name of the Worker and the bindings it is using
 - The current proxy session details (this parameter can be set to `null` or not being provided if none).
 - Potentially the auth data to use for the remote proxy session.
 
@@ -393,12 +395,12 @@ let remoteProxySessionDetails: Awaited<ReturnType<typeof experimental_maybeStart
 
 async function startOrUpdateDevSession() {
 	remoteProxySessionDetails = await experimental_maybeStartOrUpdateRemoteProxySession({
-			bindings: {
-					MY_KV: {
-						type: 'kv_namespace',
-						id: 'kv-id',
-						experimental_remote: true,
-					}
+		bindings: {
+				MY_KV: {
+					type: 'kv_namespace',
+					id: 'kv-id',
+					experimental_remote: true,
+				}
 			}
 		},
 		remoteProxySessionDetails
