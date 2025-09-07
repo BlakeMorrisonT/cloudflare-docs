@@ -126,7 +126,7 @@
 /src/content/release-notes/workers.yaml @cloudflare/workers-docs @GregBrimble @WalshyDev @aninibread @cloudflare/deploy-config @cloudflare/pcx-technical-writing @irvinebroque @mikenomitch
 /src/content/docs/zaraz/ @ToriLindsay @kathayl @bjesus @jonnyparris @simonabadoiu @cloudflare/pcx-technical-writing
 /src/content/release-notes/zaraz.yaml @bjesus @jonnyparris @simonabadoiu @cloudflare/pcx-technical-writing
-/src/content/docs/workers/ci-cd/ @irvinebroque @aninibread @GregBrimble @kodster28 @cloudflare/pcx-technical-writing
+/src/content/docs/workers/ci-cd/ @irvinebroque @aninibread @GregBrimble @kodster28 @cloudflare/pcx-technical-writing @yomna-shousha
 /src/content/compatibility-flags/ @irvinebroque @mikenomitch @GregBrimble @cloudflare/pcx-technical-writing
 /src/content/docs/workers/wrangler/ @cloudflare/wrangler @irvinebroque @kodster28 @cloudflare/pcx-technical-writing @cloudflare/workers-runtime-1
 /src/content/docs/pages/framework-guides/ @igorminar @cloudflare/wrangler @aninibread @GregBrimble @kodster28 @cloudflare/pcx-technical-writing
