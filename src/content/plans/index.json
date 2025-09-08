@@ -757,6 +757,20 @@
 					"pro": "No",
 					"biz": "No",
 					"ent": "Paid add-on"
+				},
+					"historical_data_account": {
+					"title": "Historical data",
+					"free": "N/A",
+					"pro": "N/A",
+					"biz": "N/A",
+					"ent": "62 days"
+				},
+				  "maximum_duration_account": {
+					"title": "Maximum time interval",
+					"free": "N/A",
+					"pro": "N/A",
+					"biz": "N/A",
+					"ent": "62 days"
 				}
 			}
 		},
