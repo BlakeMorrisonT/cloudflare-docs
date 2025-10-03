@@ -1632,6 +1632,7 @@
 /turnstile/get-started/supported-browsers/ /cloudflare-challenges/reference/supported-browsers/ 301
 /turnstile/troubleshooting/troubleshooting-faqs/ /turnstile/frequently-asked-questions/#troubleshooting 301
 /turnstile/tutorials/protecting-your-payment-form-from-attackers-bots-using-turnstile/ /developer-spotlight/ 301
+/turnstile/frequently-asked-questions/ /turnstile/ 301
 
 # waf
 /waf/about/ /waf/concepts/ 301
