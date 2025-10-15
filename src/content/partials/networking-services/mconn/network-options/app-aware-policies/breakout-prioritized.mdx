@@ -1,7 +1,9 @@
 ---
 params:
   - magicWord
+  - productName
   - featureName
+  - trafficSteeringURL?
   - whatHappensApp
 ---
 
@@ -9,7 +11,7 @@ import { APIRequest, Aside, AnchorHeading, CURL, Markdown, Render, TabItem, Tabs
 
 { props.magicWord === "breakout" && (
 	<>
-		<p>Breakout traffic allows you to define which applications should bypass Cloudflare's security filtering, and go directly to the Internet. It works via DNS requests inspection. This means that if your network is caching DNS requests, Breakout traffic will only take effect after you cache entries expire and your client issues a new DNS request that the Magic WAN Connector can detect. This can take several minutes.</p>
+		<p>Breakout traffic allows you to define which applications should bypass Cloudflare's security filtering, and go directly to the Internet. It works via DNS requests inspection. This means that if your network is caching DNS requests, Breakout traffic will only take effect after you cache entries expire and your client issues a new DNS request that the {props.productName} can detect. This can take several minutes.</p>
 		<Aside type="caution">Breakout traffic will not work for applications that use DNS-over-HTTPS.</Aside>
 	</>
 	)
@@ -17,7 +19,7 @@ import { APIRequest, Aside, AnchorHeading, CURL, Markdown, Render, TabItem, Tabs
 
 { props.magicWord === "prioritized" && (
 	<>
-		<p>Prioritized traffic allows you to define which applications Magic WAN Connector should process first. Applications not in the list will be queued behind prioritized traffic.</p>
+		<p>Prioritized traffic allows you to define which applications {props.productName} should process first. Applications not in the list will be queued behind prioritized traffic.</p>
 		<p>Similarly to breakout traffic, prioritized traffic also works via DNS requests inspection.</p>
 		<Aside type="caution">Prioritized traffic will not work for applications that use DNS-over-HTTPS.</Aside>
 	</>
@@ -30,7 +32,7 @@ import { APIRequest, Aside, AnchorHeading, CURL, Markdown, Render, TabItem, Tabs
 			{`
 			flowchart LR
 			accTitle: In this example, the applications go directly to the Internet, skipping Cloudflare's security. filtering
-			a(Magic WAN Connector) --> b(Cloudflare) -->|Filtered traffic|c(Internet)
+			a(${props.productName}) --> b(Cloudflare) -->|Filtered traffic|c(Internet)
 
 			a-- Breakout traffic ---d(Application1) & e(Application2) --> c
 
@@ -44,7 +46,7 @@ import { APIRequest, Aside, AnchorHeading, CURL, Markdown, Render, TabItem, Tabs
 		text={`
 		We recommend [routing](https://www.cloudflare.com/learning/network-layer/what-is-routing/) all traffic through our global network for comprehensive security filtering and access controls. However, there may be specific cases where you want a subset of traffic to bypass Cloudflare's security filtering and route it directly to the Internet. You can scope this breakout traffic to specific applications from the Cloudflare dashboard.
 
-    Refer to [Traffic steering](/magic-wan/reference/traffic-steering/) to learn how Cloudflare routes traffic.
+    Refer to <a href={props.trafficSteeringURL}>Traffic steering</a> to learn how Cloudflare routes traffic.
 		`}
 		inline={false}
 		/>
@@ -55,7 +57,7 @@ import { APIRequest, Aside, AnchorHeading, CURL, Markdown, Render, TabItem, Tabs
 
 ## Add an application to your account
 
-Before you can add or remove {props.featureName} applications to your Connector, you need to create an account-level list with the applications that you want to configure. Currently, adding to or modifying this list is only possible via API, through the [`managed_app_id`](/api/resources/magic_transit/subresources/apps/methods/create/) endpoint.
+Before you can add or remove {props.featureName} applications to your {props.productName}, you need to create an account-level list with the applications that you want to configure. Currently, adding to or modifying this list is only possible via API, through the [`managed_app_id`](/api/resources/magic_transit/subresources/apps/methods/create/) endpoint.
 
 To add applications to your account:
 
@@ -86,7 +88,7 @@ Send a `POST` request to add new apps to your account.
 
 You can now add this new app to the {props.featureName} list in your Connector.
 
-### Add an application to Connector
+### Add an application to {props.productName}
 
 You need to configure {props.featureName} applications for each of your existing sites, as this is a per-site configuration.
 
@@ -157,7 +159,7 @@ The traffic for the application you chose {props.whatHappensApp}.
 
 </TabItem> </Tabs>
 
-### Delete an application from Connector
+### Delete an application from {props.productName}
 
 <Tabs syncKey="dashPlusAPI"> <TabItem label="Dashboard">
 
@@ -222,7 +224,15 @@ You need to delete {props.featureName} applications for each of your existing si
 { props.magicWord === "breakout" && (
 	<>
 	<AnchorHeading title="WARP traffic" depth={2} />
-		<Render file="mconn/app-aware-policies/warp-traffic" product="networking-services" />
+		<Render
+			file="mconn/network-options/app-aware-policies/warp-traffic"
+			product="networking-services"
+			params={{
+				connectorName: "Magic WAN Connector",
+				mwanName: "Magic WAN",
+				warpFirewallURL: "/cloudflare-one/connections/connect-devices/warp/deployment/firewall/"
+			}}
+			/>
 	</>
 	)
 }
