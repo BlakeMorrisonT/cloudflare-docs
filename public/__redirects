@@ -2390,7 +2390,7 @@
 /cloudflare-one/policies/access/* /cloudflare-one/access-controls/policies/:splat 301
 /cloudflare-one/identity/one-time-pin/ /cloudflare-one/integrations/identity-providers/one-time-pin/ 301
 /cloudflare-one/identity/idp-integration/* /cloudflare-one/integrations/identity-providers/:splat 301
-
+/cloudflare-one/identity/devices/service-providers/* /cloudflare-one/integrations/service-providers/:splat 301
 
 # Learning paths
 
