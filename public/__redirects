@@ -2382,6 +2382,10 @@
 
 # Cloudflare One nav revamp
 /cloudflare-one/connections/ /cloudflare-one/ 301
+/cloudflare-one/identity/users/ /cloudflare-one/team-and-resources/users/ 301
+/cloudflare-one/identity/users/session-management/ /cloudflare-one/team-and-resources/users/session-management/ 301
+/cloudflare-one/identity/users/seat-management/ /cloudflare-one/team-and-resources/users/seat-management/ 301
+/cloudflare-one/identity/users/scim/ /cloudflare-one/team-and-resources/users/scim/ 301
 /cloudflare-one/connections/connect-devices/* /cloudflare-one/team-and-resources/devices/:splat 301
 /cloudflare-one/connections/connect-networks/* /cloudflare-one/networks/connectors/cloudflare-tunnel/:splat 301
 /cloudflare-one/policies/gateway/* /cloudflare-one/traffic-policies/:splat 301
@@ -2391,7 +2395,7 @@
 /cloudflare-one/identity/one-time-pin/ /cloudflare-one/integrations/identity-providers/one-time-pin/ 301
 /cloudflare-one/identity/idp-integration/* /cloudflare-one/integrations/identity-providers/:splat 301
 /cloudflare-one/identity/devices/service-providers/* /cloudflare-one/integrations/service-providers/:splat 301
-/cloudflare-one/applications/configure-apps/* /cloudflare-one/access-controls/applications/configure-apps/:splat 301
+/cloudflare-one/applications/configure-apps/* /cloudflare-one/access-controls/applications/http-apps/:splat 301
 /cloudflare-one/applications/non-http/* /cloudflare-one/access-controls/applications/non-http/:splat 301
 
 # Learning paths
