@@ -2401,6 +2401,7 @@
 /cloudflare-one/applications/configure-apps/* /cloudflare-one/access-controls/applications/http-apps/:splat 301
 /cloudflare-one/applications/non-http/* /cloudflare-one/access-controls/applications/non-http/:splat 301
 /cloudflare-one/identity/devices/* /cloudflare-one/reusable-components/posture-checks/:splat 301
+/cloudflare-one/traffic-policies/lists/ /cloudflare-one/reusable-components/lists/ 301
 /cloudflare-one/applications/casb/casb-integrations/* /cloudflare-one/integrations/cloud-and-saas/:splat 301
 /cloudflare-one/applications/casb/troubleshooting/* /cloudflare-one/integrations/cloud-and-saas/troubleshooting/:splat 301
 /cloudflare-one/applications/casb/ /cloudflare-one/cloud-and-saas-findings/ 301
