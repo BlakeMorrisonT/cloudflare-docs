@@ -10,7 +10,7 @@ sidebar:
 
 import { Render, GlossaryTooltip, APIRequest } from "~/components";
 
-Cloudflare Access can delegate access from any [self-hosted application](/cloudflare-one/access-controls/applications/http-apps/self-hosted-public-app/) to an [Access for SaaS MCP server](/cloudflare-one/access-controls/applications/http-apps/mcp-servers/saas-mcp/) via [OAuth](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization). The OAuth access token authorizes the MCP server to make requests to your self-hosted applications on behalf of the user, using the user's specific permissions and scopes.
+Cloudflare Access can delegate access from any [self-hosted application](/cloudflare-one/access-controls/applications/http-apps/self-hosted-public-app/) to an [Access for SaaS MCP server](/cloudflare-one/access-controls/ai-controls/saas-mcp/) via [OAuth](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization). The OAuth access token authorizes the MCP server to make requests to your self-hosted applications on behalf of the user, using the user's specific permissions and scopes.
 
 For example, your organization may wish to deploy an MCP server that helps employees interact with internal applications. You can configure [Access policies](/cloudflare-one/access-controls/policies/#selectors) to ensure that only authorized users can access those applications, either directly or by using an <GlossaryTooltip term="MCP client">MCP client</GlossaryTooltip>.
 
@@ -44,7 +44,7 @@ This guide covers how to use the Cloudflare API to link a self-hosted applicatio
 
 ## 1. Secure the MCP server with Access for SaaS
 
-The first step is to add the MCP server to Cloudflare Access as an OIDC-based SaaS application. For step-by-step instructions on how to add an MCP server, refer to [Secure MCP servers with Access for SaaS](/cloudflare-one/access-controls/applications/http-apps/mcp-servers/saas-mcp/).
+The first step is to add the MCP server to Cloudflare Access as an OIDC-based SaaS application. For step-by-step instructions on how to add an MCP server, refer to [Secure MCP servers with Access for SaaS](/cloudflare-one/access-controls/ai-controls/saas-mcp/).
 
 ## 2. Get the SaaS application ID
 
@@ -147,4 +147,4 @@ The end-to-end authorization flow is as follows:
 
 ## Known limitations
 
-The MCP OAuth feature only works with self-hosted applications that rely on the [Cloudflare Access JWT](/cloudflare-one/identity/authorization-cookie/validating-json/) to authenticate and identify the user. If the application implements its own layer of authentication after Cloudflare Access, then this feature is at best a partial solution. Requests that are successfully authenticated by Access may still be blocked by the application itself, resulting in an HTTP `401` or `403` error.
+The MCP OAuth feature only works with self-hosted applications that rely on the [Cloudflare Access JWT](/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/validating-json/) to authenticate and identify the user. If the application implements its own layer of authentication after Cloudflare Access, then this feature is at best a partial solution. Requests that are successfully authenticated by Access may still be blocked by the application itself, resulting in an HTTP `401` or `403` error.
