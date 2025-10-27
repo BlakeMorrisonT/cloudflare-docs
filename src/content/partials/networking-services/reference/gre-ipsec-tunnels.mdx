@@ -19,19 +19,19 @@ For instructions, refer to <a href={props.mssURL}>Set Maximum segment size</a>.
 
 This diagram illustrates the flow of traffic with {props.productName}.
 
-```mermaid
-sequenceDiagram
+<pre class="mermaid">
+{`sequenceDiagram
 accTitle: Tunnels and encapsulation
-accDescr: This diagram shows the flow of traffic with Magic Transit and Magic WAN.
+accDescr: This diagram shows the flow of traffic with ${props.productName}.
 participant A as Client machine
-participant B as Cloudflare Magic Transit / WAN
+participant B as Cloudflare ${props.productName}
 participant C as Origin router
 A->>B: Payload <br> Protocol <br> IP header
 Note left of A: Ingress <br> traffic
 B->>C: Payload <br> Protocol <br> IP header <br> GRE <br> IP header
 C->>A: IP header <br> Protocol <br> Payload
-Note right of C: Egress <br> traffic
-```
+Note right of C: Egress <br> traffic`}
+</pre>
 
 <br />
 
@@ -107,7 +107,7 @@ Internet Key Exchange (IKE) is one of the protocols that makes up IPsec. Cloudfl
 
 ### Supported configuration parameters
 
-Below is a list of the configuration parameters supported by Magic WAN. Choose which ones to use based on what your appliance supports.
+Below is a list of the configuration parameters supported by {props.productName}. Choose which ones to use based on what your appliance supports.
 
 <Details header="IKE SA (also known as Phase 1)">
 
