@@ -72,7 +72,7 @@ If a required font is not pre-installed, you can inject it into the page at rend
 ### Workers binding
 
 <Tabs> <TabItem label="JavaScript" icon="seti:javascript">
-Example with [Puppeteer](/browser-rendering/platform/puppeteer/) and a CDN source:
+Example with [Puppeteer](/browser-rendering/puppeteer/) and a CDN source:
 
 ```js
 const browser = await puppeteer.launch(env.MYBROWSER);
@@ -94,7 +94,7 @@ await page.addStyleTag({
 ```
 
 </TabItem> <TabItem label="TypeScript" icon="seti:typescript">
-Example with [Puppeteer](/browser-rendering/platform/puppeteer/) and a CDN source:
+Example with [Puppeteer](/browser-rendering/puppeteer/) and a CDN source:
 
 ```ts
 const browser = await puppeteer.launch(env.MYBROWSER);
@@ -119,7 +119,7 @@ await page.addStyleTag({
 
 
 <Tabs> <TabItem label="JavaScript" icon="seti:javascript">
-Example with [Playwright](/browser-rendering/platform/playwright/) and a Base64 encoded data source:
+Example with [Playwright](/browser-rendering/playwright/) and a Base64 encoded data source:
 
 ```js
 const browser = await playwright.launch(env.MYBROWSER);
@@ -141,7 +141,7 @@ await page.addStyleTag({
 ```
 
 </TabItem> <TabItem label="TypeScript" icon="seti:typescript">
-Example with [Playwright](/browser-rendering/platform/playwright/) and a Base64 encoded data source:
+Example with [Playwright](/browser-rendering/playwright/) and a Base64 encoded data source:
 
 ```ts
 const browser = await playwright.launch(env.MYBROWSER);
