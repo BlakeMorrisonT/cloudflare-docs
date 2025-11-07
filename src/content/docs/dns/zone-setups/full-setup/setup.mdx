@@ -113,13 +113,17 @@ When your domain is **Active**:
 - CLI commands will show your Cloudflare-assigned nameservers
 
 ```txt
-*Linux/Unix*
-dig <DOMAIN_NAME> +trace @1.1.1.1
-dig <DOMAIN_NAME> +trace @8.8.8.8
+*macOS/Linux*
+
+whois <DOMAIN_NAME>
+dig ns <DOMAIN_NAME> @1.1.1.1
+dig ns <DOMAIN_NAME> @8.8.8.8
+dig <DOMAIN_NAME> +trace
 
 *Windows*
-nslookup <DOMAIN_NAME> 1.1.1.1
-nslookup <DOMAIN_NAME> 8.8.8.8
+
+nslookup -type=ns <DOMAIN_NAME> 1.1.1.1
+nslookup -type=ns <DOMAIN_NAME> 8.8.8.8
 ```
 
 :::note
