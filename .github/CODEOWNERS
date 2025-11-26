@@ -200,8 +200,8 @@ src/content/docs/smart-shield/ @RebeccaTamachiro @cloudflare/pcx-technical-writi
 
 # Reference architecture
 
-/src/content/docs/reference-architecture/ @securitypedant @haleycode @cloudflare/pcx-technical-writing
-/src/assets/images/reference-architecture/ @securitypedant @haleycode @cloudflare/pcx-technical-writing
+/src/content/docs/reference-architecture/ @securitypedant @cloudflare/pcx-technical-writing
+/src/assets/images/reference-architecture/ @securitypedant @cloudflare/pcx-technical-writing
 
 # Security products
 
