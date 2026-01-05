@@ -128,6 +128,7 @@
 /src/content/release-notes/r2.yaml @oxyjun @elithrar @aninibread @cloudflare/workers-docs @cloudflare/pcx-technical-writing
 /src/content/docs/realtime/ @cloudflare/pcx-technical-writing @cloudflare/realtime @cloudflare/RealtimeKit @roerohan @ravindra-dyte
 /src/assets/images/realtime/ @cloudflare/pcx-technical-writing @cloudflare/realtime @cloudflare/RealtimeKit @roerohan @ravindra-dyte
+/src/content/partials/realtime/ @cloudflare/realtime @cloudflare/RealtimeKit @roerohan @ravindra-dyte @cloudflare/pcx-technical-writing
 /public/realtime/ @cloudflare/pcx-technical-writing @cloudflare/realtime @cloudflare/RealtimeKit @roerohan @ravindra-dyte
 /src/content/docs/stream/ @tsmith512 @ToriLindsay @cloudflare/pcx-technical-writing @renandincer @third774
 /src/content/release-notes/stream.yaml @tsmith512 @ToriLindsay @cloudflare/pcx-technical-writing
