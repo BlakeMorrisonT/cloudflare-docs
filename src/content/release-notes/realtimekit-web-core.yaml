@@ -3,6 +3,40 @@ link: "/realtime/realtimekit/release-notes/"
 productName: RealtimeKit Web Core
 productLink: "/realtime/realtimekit/"
 entries:
+  - publish_date: "2026-01-05"
+    title: RealtimeKit Web Core 1.2.3
+    description: |-
+      **Fixes**
+
+      - Fixed an issue where users who joined a meeting with audio and video disabled and then initiated tab screen sharing would experience SDP corruption upon stopping the screen share, preventing subsequent actions such as enabling audio or video.
+      
+        Error thrown:
+        ```text
+        InvalidAccessError: Failed to execute 'setRemoteDescription' on 'RTCPeerConnection': Failed to set remote answer sdp: Failed to set remote audio description send parameters for m-section with mid='<N>'
+        ```
+      - Fixed an issue where awaiting `RealtimeKitClient.initMedia` did not return media tracks
+
+        Example usage:
+        ```ts
+        const media = await RealtimeKitClient.initMedia({
+          video : true,
+          audio: true,
+        });
+
+        const { videoTrack, audioTrack } = media;
+        ```
+ 
+      - Fixed an issue where an undefined variable caused `TypeError: Cannot read properties of undefined (reading 'getValue')` in media retrieval due to a race condition.
+
+  - publish_date: "2025-12-17"
+    title: RealtimeKit Web Core 1.2.2
+    description: |-
+      **Fixes**
+
+      - Fixed an issue where camera switching between front and rear cameras was not working on Android devices
+      - Fixed device selection logic to prioritize media devices more effectively
+      - Added PIP support for [Reactions](https://developers.cloudflare.com/realtime/realtimekit/ui-kit/addons/#reactions-1)
+
   - publish_date: "2025-11-18"
     title: RealtimeKit Web Core 1.2.1
     description: |-
