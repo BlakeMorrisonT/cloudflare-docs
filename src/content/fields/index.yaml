@@ -552,7 +552,7 @@ entries:
       Requires a Cloudflare Enterprise plan with [Bot Management](/bots/plans/bm-subscription/) enabled.
 
   - name: cf.bot_management.static_resource
-    data_type: Number
+    data_type: Boolean
     categories: [Request, Bots]
     keywords: [request, bots, client, visitor]
     plan_info_label: Enterprise add-on
@@ -625,7 +625,7 @@ entries:
       This field is only meaningful for [BYOIP customers](/byoip/).
 
   - name: cf.edge.server_port
-    data_type: IP address
+    data_type: Number
     categories: [Request]
     keywords: [request, cloudflare, client, visitor]
     summary: Represents the port number at which the Cloudflare global network received the request.
