@@ -1,15 +1,15 @@
 ---
-title: Connecting to MCP servers
-pcx_content_type: concept
+title: McpClient
+pcx_content_type: reference
 tags:
   - MCP
 sidebar:
-  order: 7
+  order: 12
 ---
 
 import { Render, TypeScriptExample, LinkCard } from "~/components";
 
-Connect your agent to external MCP (Model Context Protocol) servers to use their tools, resources, and prompts. This enables your agent to interact with GitHub, Slack, databases, and other services through a standardized protocol.
+Connect your agent to external [Model Context Protocol (MCP)](/agents/model-context-protocol/) servers to use their tools, resources, and prompts. This enables your agent to interact with GitHub, Slack, databases, and other services through a standardized protocol.
 
 ## Overview
 
@@ -22,7 +22,7 @@ The MCP client capability lets your agent:
 
 :::note
 
-This page covers connecting to MCP servers as a client. To create your own MCP server, refer to [Creating MCP servers](/agents/model-context-protocol/mcp-agent-api/).
+This page covers connecting to MCP servers as a client. To create your own MCP server, refer to [Creating MCP servers](/agents/api-reference/mcp-agent-api/).
 
 :::
 
@@ -775,7 +775,7 @@ export class MyAgent extends Agent {
 
 <LinkCard
 	title="Creating MCP servers"
-	href="/agents/model-context-protocol/mcp-agent-api/"
+	href="/agents/api-reference/mcp-agent-api/"
 	description="Build your own MCP server."
 />
 

@@ -1,15 +1,15 @@
 ---
-pcx_content_type: concept
-title: createMcpHandler — API Reference
+pcx_content_type: reference
+title: createMcpHandler
 tags:
   - MCP
 sidebar:
-  order: 6
+  order: 12
 ---
 
 import { Render, TypeScriptExample, LinkCard } from "~/components";
 
-The `createMcpHandler` function creates a fetch handler to serve your MCP server. You can use it as an alternative to the [`McpAgent`](/agents/model-context-protocol/mcp-agent-api) class when you don't need the deprecated SSE transport.
+The `createMcpHandler` function creates a fetch handler to serve your [MCP server](/agents/model-context-protocol/). You can use it as an alternative to the [`McpAgent`](/agents/api-reference/mcp-agent-api) class when you don't need the deprecated SSE transport.
 
 It uses an implementation of the MCP Transport interface, `WorkerTransport`, built on top of web standards, which conforms to the [streamable-http](https://modelcontextprotocol.io/specification/draft/basic/transports/#streamable-http) transport specification.
 
@@ -86,7 +86,7 @@ const handler = createMcpHandler(server, {
 
 #### authContext
 
-An authentication context object that will be available to MCP tools via [`getMcpAuthContext()`](/agents/model-context-protocol/mcp-handler-api#authentication-context).
+An authentication context object that will be available to MCP tools via [`getMcpAuthContext()`](/agents/api-reference/mcp-handler-api#authentication-context).
 
 When using the [`OAuthProvider`](/agents/model-context-protocol/authorization/) from `@cloudflare/workers-oauth-provider`, the authentication context is automatically populated with information from the OAuth flow. You typically don't need to set this manually.
 
@@ -124,7 +124,7 @@ MCP SDK 1.26.0 introduces a guard that prevents connecting to a server instance 
 
 **If your stateless MCP server declares `McpServer` or transport instances in the global scope, you must create new instances per request.**
 
-See the [migration guide](/agents/model-context-protocol/mcp-handler-api/#migration-guide-for-mcp-sdk-1260) below for details.
+See the [migration guide](/agents/api-reference/mcp-handler-api/#migration-guide-for-mcp-sdk-1260) below for details.
 :::
 
 <TypeScriptExample>
@@ -642,6 +642,6 @@ server.tool("riskyOperation", "An operation that might fail", {}, async () => {
 
 <LinkCard
 	title="McpAgent API"
-	href="/agents/model-context-protocol/mcp-agent-api/"
+	href="/agents/api-reference/mcp-agent-api/"
 	description="Build stateful MCP servers."
 />
