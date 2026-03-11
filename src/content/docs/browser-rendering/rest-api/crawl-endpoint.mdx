@@ -434,13 +434,15 @@ If you use Cloudflare products that control or restrict bot traffic such as [Bot
   product="browser-rendering"
 />
 
+The `/crawl` endpoint uses `CloudflareBrowserRenderingCrawler/1.0` as its default User-Agent, which is different from the other [REST API](/browser-rendering/rest-api/) endpoints. For a full list of default User-Agent strings, refer to [Automatic request headers](/browser-rendering/reference/automatic-request-headers/#user-agent).
+
 ## Troubleshooting
 
 ### Crawl job returns no results or all URLs are skipped
 
 If your crawl job completes but returns an empty records array, or all URLs show `skipped` or `disallowed` status:
 
-- **robots.txt blocking** — The crawler respects `robots.txt` rules. Check the target site's `robots.txt` file to verify your user agent is allowed. Blocked URLs appear with `"status": "disallowed"`.
+- **robots.txt blocking** — The crawler respects `robots.txt` rules. The `/crawl` endpoint identifies itself as `CloudflareBrowserRenderingCrawler/1.0`. Check the target site's `robots.txt` file to verify this user agent is allowed. Blocked URLs appear with `"status": "disallowed"`.
 - **Pattern filters too restrictive** — Your `includePatterns` may not match any URLs on the site. Try crawling without patterns first to confirm URLs are discoverable, then add patterns.
 - **No links found** — The starting URL may not contain links. Try using `source: "sitemaps"`, increasing the `depth` parameter, or setting `includeSubdomains` or `includeExternalLinks` to `true`.
 
