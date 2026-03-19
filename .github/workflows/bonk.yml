@@ -9,12 +9,13 @@ on:
     types: [submitted]
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.event.issue.number || github.ref }}
+  # intentionally hardcoded so that all Bonk workflows coexist peacefully
+  group: bonk-${{ github.event.pull_request.number || github.event.issue.number || github.ref }}
   cancel-in-progress: false
 
 jobs:
   bonk:
-    if: github.event.sender.type != 'Bot' && (contains(github.event.comment.body, '/bonk') || contains(github.event.comment.body, '@ask-bonk'))
+    if: github.event.sender.type != 'Bot' && contains(github.event.comment.body, '/bonk') && !contains(github.event.comment.body, '/bigbonk')
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -37,14 +38,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run Bonk
+      - name: Run Lil Bonk
         uses: ask-bonk/ask-bonk/github@main
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_AI_GATEWAY_ACCOUNT_ID }}
           CLOUDFLARE_GATEWAY_ID: ${{ secrets.CF_AI_GATEWAY_NAME }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_AI_GATEWAY_TOKEN }}
         with:
-          model: "cloudflare-ai-gateway/anthropic/claude-opus-4-6"
-          agent: docs # use our Docs agent by default in this repo
-          mentions: "/bonk,@ask-bonk"
+          model: "cloudflare-ai-gateway/workers-ai/@cf/moonshotai/kimi-k2.5"
+          agent: docs
+          mentions: "/bonk"
           permissions: CODEOWNERS
