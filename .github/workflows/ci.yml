@@ -107,6 +107,13 @@ jobs:
           node-version: 22.x
           cache: npm
 
+      - name: Check for CRLF line endings
+        run: |
+          if git grep -Il $'\r'; then
+            echo "::error::CRLF line endings detected. Configure your editor to use LF line endings (this repo has an .editorconfig file that most editors respect automatically)."
+            exit 1
+          fi
+
       - run: |
           FILES=$(
             find src/content \
