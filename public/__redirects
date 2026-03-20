@@ -31,7 +31,7 @@
 /cloudflare-one/changelog/gateway/index.xml /changelog/rss/gateway.xml 301
 /cloudflare-one/changelog/risk-score/index.xml /changelog/rss/risk-score.xml 301
 /cloudflare-one/changelog/tunnel/index.xml /changelog/rss/cloudflare-tunnel.xml 301
-/cloudflare-one/changelog/warp/index.xml /changelog/rss/zero-trust-warp.xml 301
+/cloudflare-one/changelog/warp/index.xml /changelog/rss/cloudflare-one-client.xml 301
 /dns/changelog/index.xml /changelog/rss/dns.xml 301
 /fundamentals/changelog/index.xml /changelog/rss/fundamentals.xml 301
 /load-balancing/changelog/index.xml /changelog/rss/load-balancing.xml 301
@@ -49,6 +49,8 @@
 /waf/change-log/index.xml /changelog/rss/waf.xml 301
 /waf/change-log/general-updates/ /waf/change-log/changelog/ 301
 /waf/change-log/general-updates/index.xml /changelog/rss/waf.xml 301
+/changelog/rss/zero-trust-warp.xml /changelog/rss/cloudflare-one-client.xml 301
+
 ## area changelog feeds
 
 /fundamentals/reference/changelog/performance/index.xml /changelog/rss/application-performance.xml 301
