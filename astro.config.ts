@@ -25,6 +25,8 @@ import { createSitemapLastmodSerializer } from "./sitemap.serializer.ts";
 
 import skills from "astro-skills";
 
+import { isDisallowedByRobots } from "./src/util/robots.ts";
+
 async function autogenSections() {
 	const sections = (
 		await readdir("./src/content/docs/", {
@@ -229,7 +231,14 @@ export default defineConfig({
 				}
 
 				const pathname = new URL(page).pathname;
+
+				// Exclude external_link pages
 				if (externalLinkPaths.has(pathname)) {
+					return false;
+				}
+
+				// Exclude pages disallowed in robots.txt
+				if (isDisallowedByRobots(pathname)) {
 					return false;
 				}
 
