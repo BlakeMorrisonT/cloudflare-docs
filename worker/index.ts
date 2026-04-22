@@ -92,6 +92,20 @@ export default class extends WorkerEntrypoint<Env> {
 			});
 		}
 
+		if (pathname === "/.well-known/mcp/server-card.json") {
+			const object = await this.env.MIDDLECACHE.get(
+				"v1/cloudflare-mcps/server-card.json",
+			);
+			if (!object) {
+				return new Response("server-card.json not found", { status: 404 });
+			}
+			return new Response(object.body, {
+				headers: {
+					"Content-Type": "application/json; charset=utf-8",
+				},
+			});
+		}
+
 		if (pathname === "/openapi.json") {
 			const object = await this.env.MIDDLECACHE.get(
 				"v1/cloudflare-api-schemas/openapi.json",
