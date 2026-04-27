@@ -194,6 +194,7 @@ export default defineConfig({
 									"/style-guide/index.md",
 									"/videos/**",
 									"/search/**",
+									"/agent-setup/",
 								],
 							}),
 						]
