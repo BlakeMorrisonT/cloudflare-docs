@@ -181,7 +181,7 @@ The tables below show whether each Cloudflare product is compatible with each DL
 
 [^30]: Regular/Generic and Custom Tiered Cache work with Customer Metadata Boundary (CMB). Smart Tiered Caching (where Cloudflare automatically selects intermediate cache data centers) does not work with CMB. <br/> With CMB set to EU, the Zone Dashboard **Caching** > **Tiered Cache** > **Smart Tiered Caching** option will not populate the Dashboard Analytics.
 
-[^31]: DLP is part of Gateway HTTP, however, [DLP detection entries](/cloudflare-one/data-loss-prevention/detection-entries/) are not available outside US region when using Customer Metadata Boundary.
+[^31]: DLP is part of Gateway HTTP, however, [DLP detection entries](/cloudflare-one/data-loss-prevention/detection-entries/configure-detection-entries/) are not available outside US region when using Customer Metadata Boundary.
 
 [^33]: If you use [outgoing zone transfers](/dns/zone-setups/zone-transfers/cloudflare-as-primary/) (where Cloudflare sends your DNS records to non-Cloudflare nameservers), those transfers will include global Cloudflare IP addresses rather than region-specific ones. This means Regional Services will not function correctly when end users receive DNS answers from non-Cloudflare nameservers.
 
